@@ -7,3 +7,5 @@ categories: [python, vscode, conda, hello]
 [설치, 헬로우월드, VSCode, pip, 가상환경] 이 모든 것을 한 영상에!!
 
 > youtube: https://youtu.be/7wrNy8fPkj4
+
+{% youtube https://youtu.be/7wrNy8fPkj4 %}
