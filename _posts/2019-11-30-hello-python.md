@@ -6,5 +6,3 @@ categories: [python, vscode, conda, hello]
 # 파이썬 기초 5종 세트!!
 
 > youtube: https://youtu.be/7wrNy8fPkj4
-
-{% youtube https://youtu.be/7wrNy8fPkj4 %}
