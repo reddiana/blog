@@ -92,6 +92,9 @@ key: value
 
 {% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}
 
+## Youtube Videos
+
+> youtube: https://youtu.be/XfoYk_Z5AkI
 
 ## Footnotes
 
