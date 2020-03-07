@@ -39,6 +39,8 @@ baseurl: "/blog" # the subpath of your site, e.g. "/blog".
 # Email and twitter are optional:
 email: everlearningemployee@gmail.com
 # twitter_username: "fastdotai"
+facebook_username: everlearningemployee
+youtube_username: UCuqelMVE6ZKFhv8tP8n-FkA
 
 # Set this to true to get LaTeX math equation support
 use_math: true
