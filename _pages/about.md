@@ -4,10 +4,35 @@ title: About Me
 permalink: /about/
 ---
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
+안녕하세요!  
+공부하는 회사원 빨강달입니다.  
+하는 일이 전산 쪽이라서  
+~~영원히 고통받는~~ 계속해서 공부해야하는 회사원이랍니다.  
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+전산 쪽에 있다보면  
+"남들은 다 아는거 같은데 나만 몰라"   
+쯤 되는 기술들이 참 많아요.  
 
+게다가 공부라는게 혼자서 하면 어려운 점이 많죠.   
+저도 어떤 주제로 공부를 시작할 때 마다  
+어떻게 뭐부터 시작해야하나?   
+누가 시연 한번만 보여주면 금방 따라할 수 있을 것 같은데...  
+이렇게 하는게 맞는건가? 나 삽질하는 건가?  
+등등이 아쉽고 답답했는데요.  
+내가 학습능력이 좀 딸리는건 아닌가 자괴감도 간간히 들었지요.  
 
+그래서!   
+제가 공부하면서 겪었던 이런 어려움을   
+또~옥같이 겪고계실 흑우들을 위하여  
+저 빨강달이 준비했습니다.  
+[공부하는 회사원] 빨강달 채널에서는  
+옆에서 같이 공부하듯 쉽게쉽게 설명해보려고 합니다.  
 
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+빨강달이 했다면 **당신도 할 수 있다!!**
+
+기초라고 무시하지 말자!  
+천리길도 한걸음부터!!  
+시작이 반!!  
+챙피하면 스스로에게 지는 거임!!  
+
+그럼 우리 모두 화이팅  
