@@ -9,7 +9,7 @@ categories: [python, exception]
 
 - [파이썬 공식 자습서 - 8. 에러와 예외](https://docs.python.org/ko/3/tutorial/errors.html#errors-and-exceptions)
 - [파이썬을 이용한 전문적인 오류 처리](https://code.tutsplus.com/ko/tutorials/professional-error-handling-with-python--cms-25950)
-- :+1: [Catching every single exception with Python](https://dev.to/joshuaschlichting/catching-every-single-exception-with-python-40o3) 
+- [Catching every single exception with Python](https://dev.to/joshuaschlichting/catching-every-single-exception-with-python-40o3) 
 
 
 ```python
