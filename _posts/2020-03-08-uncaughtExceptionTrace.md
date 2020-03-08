@@ -7,6 +7,9 @@ categories: [python]
 # Uncaught Exception Trace
 
 ```python
+import sys
+import traceback
+
 def exception_hook(type, value, tb):
     logging.error('='*80)
     logging.error(f'Type: {type}')
@@ -23,4 +26,18 @@ sys.excepthook = exception_hook
 1 / 0
 ```
 
+```
+2020-03-08 17:51:52 root      ERROR ================================================================================
+2020-03-08 17:51:52 root      ERROR Type: <class 'IndexError'>
+2020-03-08 17:51:52 root      ERROR Value: tuple index out of range
+2020-03-08 17:51:52 root      ERROR Traceback (most recent call last):
+2020-03-08 17:51:52 root      ERROR   File "d:/temp/haha.py", line 59, in <module>
+2020-03-08 17:51:52 root      ERROR     lumberjack()
+2020-03-08 17:51:52 root      ERROR   File "d:/temp/haha.py", line 52, in lumberjack
+2020-03-08 17:51:52 root      ERROR     bright_side_of_death()
+2020-03-08 17:51:52 root      ERROR   File "d:/temp/haha.py", line 56, in bright_side_of_death
+2020-03-08 17:51:52 root      ERROR     return tuple()[0]
+2020-03-08 17:51:52 root      ERROR IndexError: tuple index out of range
+2020-03-08 17:51:52 root      ERROR --------------------------------------------------------------------------------
+```
 <script src="https://gist.github.com/everlearningemployee/1746cd89615dfebed068345f5505d525.js"></script>
