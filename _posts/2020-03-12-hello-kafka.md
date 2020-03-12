@@ -19,7 +19,7 @@ categories: [kafka, hello]
     - 어쨌든 일 함. 특정  Consumer로 일이 쏠림
   - 갯수(Partition) < 갯수(Consumer)
     - 노는 Consumr 생심. 이런 상황 절대 허용할 수 없음
-#### 스마트인터락 적용 전략
+#### ML 적용 전략
 
 - AI Logic Pod ← Consumer
 
@@ -60,10 +60,6 @@ categories: [kafka, hello]
         - https://github.com/SOHU-Co/kafka-node/issues/1094
         
       - Parition과 Cousumer 각각의 **갯수 자체**가 의미 있음
-      
-      - NiFi [PublishKafka](https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-kafka-0-9-nar/1.5.0/org.apache.nifi.processors.kafka.pubsub.PublishKafka/)에는 RoundRobinPartitioner와 DefaultPartitioner 밖에 옵션이 없음
-      
-        - Dynamic Properties 라는 걸로 Kafka configuration 할 수 있다고 함. 이걸로 되는 걸까?
       
       - 구찮... 3)안은 못 쓰겠다.
 
