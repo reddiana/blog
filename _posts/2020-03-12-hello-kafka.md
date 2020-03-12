@@ -111,7 +111,7 @@ categories: [kafka, hello]
 # Kafka 토픽
 topic: diff-ai
 # 업무단위: 정책 상 토픽과 1:1
-group_id: interlockGrp
+group_id: mymyGrp
 # Kafka 서버
 bootstrap_servers: localhost:9092
 # 오프셋이 없거나 현재 오프셋이 더 이상 존재하지 않은 경우 
@@ -138,12 +138,12 @@ kafka-topics.bat --zookeeper localhost:2181 --list
 ### Producer 콘솔 기동
 ```bash
 kafka-console-producer --broker-list localhost:9092 --topic diff-ai
-kafka-console-producer --broker-list localhost:9092 --topic interlock-A < ..\..\..\Test\TestData\short_input.txt
+kafka-console-producer --broker-list localhost:9092 --topic mymy-A < ..\..\..\Test\TestData\short_input.txt
 ```
 ### Consumer 콘솔 기동
 ```bash
-kafka-console-consumer --bootstrap-server localhost:9092 --topic diff-ai --group interlockGrp
-kafka-console-consumer --bootstrap-server loclahost:9092 --topic interlock-B --group interlockGrp
+kafka-console-consumer --bootstrap-server localhost:9092 --topic diff-ai --group mymyGrp
+kafka-console-consumer --bootstrap-server loclahost:9092 --topic mymy-B --group mymyGrp
 ```
 ### Topic alter
 ```bash
@@ -163,8 +163,9 @@ kafka-topics --alter --zookeeper localhost:2181 --topic diff-ai --partitions 4
   [kafka-python](https://github.com/dpkp/kafka-python) > [PyKafka](https://github.com/Parsely/pykafka) > [confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)
   
 - 처리속도 비교 
-  - [Kafka Python client 성능 테스트](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjckIqvvrHlAhWIQN4KHYQ0AqwQFjABegQIARAB&url=http%3A%2F%2Fwww.popit.kr%2Fkafka-python-client-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8%2F&usg=AOvVaw3Q4mrA8RW8xRXFcBd2tmD5) (원본자료: [Python Kafka Client Benchmarking 2016-06-15](http://activisiongamescience.github.io/2016/06/15/Kafka-Client-Benchmarking/#Python-Kafka-Client-Benchmarking)) 
-
+  
+- [Kafka Python client 성능 테스트](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjckIqvvrHlAhWIQN4KHYQ0AqwQFjABegQIARAB&url=http%3A%2F%2Fwww.popit.kr%2Fkafka-python-client-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8%2F&usg=AOvVaw3Q4mrA8RW8xRXFcBd2tmD5) (원본자료: [Python Kafka Client Benchmarking 2016-06-15](http://activisiongamescience.github.io/2016/06/15/Kafka-Client-Benchmarking/#Python-Kafka-Client-Benchmarking)) 
+  
 - https://kafka-python.readthedocs.io/en/master/apidoc/modules.html
 
 - [kafka-python](https://github.com/dpkp/kafka-python) 헬로우월드
@@ -176,7 +177,7 @@ kafka-topics --alter --zookeeper localhost:2181 --topic diff-ai --partitions 4
     import time
                     
     consumer = KafkaConsumer('diff-ai', 
-                             group_id='interlockGrp', 
+                             group_id='mymyGrp', 
                              bootstrap_servers='localhost:9092')
     
     for message in consumer:
