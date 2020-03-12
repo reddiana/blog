@@ -12,7 +12,7 @@ categories: [kafka, hello]
 
 # Consumer Group / Partition
 
-- [Kafka 운영자가 말하는 Kafka Consumer Group | Popit](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwis4s_no6zlAhUKvZQKHXC1ClQQFjAAegQIARAB&url=http%3A%2F%2Fwww.popit.kr%2Fkafka-consumer-group%2F&usg=AOvVaw2eqTWdayB-QZk7ez_CRru-)
+- [Kafka 운영자가 말하는 Kafka Consumer Group](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwis4s_no6zlAhUKvZQKHXC1ClQQFjAAegQIARAB&url=http%3A%2F%2Fwww.popit.kr%2Fkafka-consumer-group%2F&usg=AOvVaw2eqTWdayB-QZk7ez_CRru-)
   - 컨슈머 그룹 별로 각각 offset이 유지됨
   - 한 번 늘린 Partition은 줄일 수 없음
   - 갯수(Partition) > 갯수(Consumer):
@@ -21,7 +21,7 @@ categories: [kafka, hello]
     - 노는 Consumr 생심. 이런 상황 절대 허용할 수 없음
 #### ML 적용 전략
 
-- AI Logic Pod ← Consumer
+- K8s에 ML Logic Consumer Pod가 배포됐다고 치자
 
 - Consumer Group은 **업무별로 1개**
 
@@ -45,7 +45,7 @@ categories: [kafka, hello]
   
   - 2안) 갯수(Partition) = Max(갯수(Consumer))
     - Consumer Pod를 Scaling 함
-      - 장점: Pod 갯수 팔요한 만큼 떠 있음
+      - 장점: Pod 갯수 필요한 만큼 까지만 떠 있음
     - 단점: 업무 특성 상, Scale Out 시 모델 리스토어를 위하여 Pod ready 시간이 수십초~수분 소요 예상 ← 적절한 선택이 아님
   
   - 3안) Parition과 Cousumer 갯수는 테스트로 적정치 선정
@@ -153,8 +153,6 @@ kafka-topics --alter --zookeeper localhost:2181 --topic diff-ai --partitions 4
 - Kafka port: 9092
 - Zookeeper port: 2181
 
-
-
 - [Hello world in Kafka using Python - Timber.io](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjWpPjcsLHlAhWMJaYKHUffDi8QFjABegQIBBAB&url=https%3A%2F%2Ftimber.io%2Fblog%2Fhello-world-in-kafka-using-python%2F&usg=AOvVaw3zKbjel1WRwgyoEhDahl1g)
 
 
@@ -163,12 +161,9 @@ kafka-topics --alter --zookeeper localhost:2181 --topic diff-ai --partitions 4
 
 - [구글 트랜드 결과](https://trends.google.co.kr/trends/explore?q=%22kafka-python%22,PyKafka,%22confluent-kafka%22)
   [kafka-python](https://github.com/dpkp/kafka-python) > [PyKafka](https://github.com/Parsely/pykafka) > [confluent-kafka-python](https://github.com/confluentinc/confluent-kafka-python)
-  ![1571802788664](Kafka.assets/1571802788664.png)
-
+  
 - 처리속도 비교 
-  - [Kafka Python client 성능 테스트](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjckIqvvrHlAhWIQN4KHYQ0AqwQFjABegQIARAB&url=http%3A%2F%2Fwww.popit.kr%2Fkafka-python-client-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8%2F&usg=AOvVaw3Q4mrA8RW8xRXFcBd2tmD5) (원본자료: [Python Kafka Client Benchmarking 2016-06-15](http://activisiongamescience.github.io/2016/06/15/Kafka-Client-Benchmarking/#Python-Kafka-Client-Benchmarking))
-
-![kafka_python](Kafka.assets/kafka_python-600x346-1571803170642.png) 
+  - [Kafka Python client 성능 테스트](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwjckIqvvrHlAhWIQN4KHYQ0AqwQFjABegQIARAB&url=http%3A%2F%2Fwww.popit.kr%2Fkafka-python-client-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8%2F&usg=AOvVaw3Q4mrA8RW8xRXFcBd2tmD5) (원본자료: [Python Kafka Client Benchmarking 2016-06-15](http://activisiongamescience.github.io/2016/06/15/Kafka-Client-Benchmarking/#Python-Kafka-Client-Benchmarking)) 
 
 - https://kafka-python.readthedocs.io/en/master/apidoc/modules.html
 
@@ -203,7 +198,6 @@ kafka-topics --alter --zookeeper localhost:2181 --topic diff-ai --partitions 4
   - [Kafka Consumer Lag 모니터링, Burrow를 알아보자 (1)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwiyl93D8rHlAhWQbN4KHW81B_AQFjABegQIAhAB&url=https%3A%2F%2Fdol9.tistory.com%2F272&usg=AOvVaw38_uV7jfhMRQjHFyAPXSuZ)
   - [Monitoring Kafka with Burrow - Part 1 - Cloudera Community](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwjZidSW-LHlAhXdzIsBHXsEDagQFjAAegQIABAB&url=https%3A%2F%2Fcommunity.cloudera.com%2Ft5%2FCommunity-Articles%2FMonitoring-Kafka-with-Burrow-Part-1%2Fta-p%2F245987&usg=AOvVaw2mXcK_5vPKZqamVCHFyw72)
 - [Apache ZooKeeper 소개 - SlideShare](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&ved=2ahUKEwjenIqN87HlAhVDE4gKHb6WCBkQFjAIegQINBAB&url=https%3A%2F%2Fwww.slideshare.net%2Fsunnykwak90%2Fapache-zoo-keeper&usg=AOvVaw0PpQfiNhFgyy1PqB9LdBpq)
-- 
 
 
 
