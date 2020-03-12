@@ -35,7 +35,7 @@ categories: [kafka, hello]
       - 1개의 consumer는 1개 이상의 partition에 붙을 수 있으나
     - 1개의 partition은 1개의 consumer만 담당
     - 무조건 **갯수(Partition) >= 갯수(Consumer)**로 구성 필요
-    - 스마트 인터락은 **롱트랜잭션**이므로
+    - ML컨수머는 **롱트랜잭션**이므로
   
   - **1안) 갯수(Partition) = 갯수(Consumer): 1대 1로 갯수를 맞춤**
   
@@ -93,7 +93,7 @@ categories: [kafka, hello]
 
 - [Kafka - Kafka Consumer(카프카 컨슈머) Java&CLI - 코딩스타트](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=2ahUKEwis4s_no6zlAhUKvZQKHXC1ClQQFjABegQIAhAB&url=https%3A%2F%2Fcoding-start.tistory.com%2F137&usg=AOvVaw0ygVeIKyALE-u0C4ernoJG)
 
-| Option                   | 내용                                                         | 스마트 인터락 설정                         |
+| Option                   | 내용                                                         | 컨수머 설정                         |
 | ------------------------ | ------------------------------------------------------------ | ------------------------------------------ |
 | **bootstrap.servers**    | 호스트와 포트 정보로 구성된 리스트                           |                                            |
 | **group.id**             | 컨슈머 그룹 식별자                                           | 업무별 1개                                 |
@@ -118,7 +118,7 @@ bootstrap_servers: localhost:9092
 # earliest:가장초기, latest마지막, none:에러
 auto_offset_reset: latest
 # 컨슈머와 브로커사이의 세션 타임 아웃시간 (초). 브로커가 컨슈머가 살아있는 것으로 판단하는 시간
-# 스마트인터락은 롱트랜잭션이므로 충분히 길게 설정할 것
+# ML컨수머는 롱트랜잭션이므로 충분히 길게 설정할 것
 session_timeout_ms: 1200
 # 롱트랜잭션이며 새로 추가되는 pod가 메시지를 즉시 받아올 수 있도록 1로 설정
 max_poll_records: 1
