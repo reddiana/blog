@@ -11,6 +11,19 @@ categories: [python, tdd, pytest, test]
 - 김정주 Webzen -[SlideShare 파이썬 TDD 101](https://www.slideshare.net/ssuser163469/tdd-101?from_action=save) [(pdf)](오늘공부.2019.0903.assets\tdd101-150316165839-conversion-gate01.pdf) 
 - [최명규](https://www.slideshare.net/bench8704?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview) - [SlideShare - Python Unittest](https://www.slideshare.net/bench8704/python-unittest?next_slideshow=1) [(pdf)](오늘공부.2019.0903.assets\pythonunittest-141215203459-conversion-gate02.pdf) 
 
+## Python Unit Testing Framework
+
+[5 Python Unit Test Frameworks To Learn In 2019](https://www.analyticsindiamag.com/5-python-unit-test-frameworks-to-learn-in-2019/)
+
+- unittest 모듈 - 기본 내장
+- ~~PyUnit - unittest 예전 이름~~
+- nose - 한물 갔다고 함
+- **PyTest** - 당첨
+- ~~coverage - 테스트 커버리지 분석~~
+- ~~Doctest - 특수 목적~~
+
+- [Google 트렌드: PyTest, nose2, "unittest"에 관한 검색 관심도를 시간, 위치, 인기도순으로 탐색](https://trends.google.co.kr/trends/explore?date=today%2012-m,today%2012-m,today%2012-m&geo=,,&q=unittest,nose2,PyTest&hl=ko&tz=-540)
+
 # PyTest
 
 ### [PyTest Tutorial: What is, Install, Fixture, Assertions](https://www.guru99.com/pytest-tutorial.html)
