@@ -3,6 +3,7 @@ title: Git Authentication
 description: "맨날 까먹지"
 categories: [git]
 ---
+ 
 
 ### [GitHub Error: Authentication Failed from the Command Line](https://medium.com/@ginnyfahs/github-error-authentication-failed-from-command-line-3a545bfd0ca8)
 
