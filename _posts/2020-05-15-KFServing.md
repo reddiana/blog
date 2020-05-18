@@ -1,7 +1,7 @@
 ---
 title: KFServing
 description: "Kubeflow Serving Component"
-categories: [Kubeflow, ML Serving]
+categories: [Kubeflow, MLServing]
 ---
 
 # [KFServing](https://www.kubeflow.org/docs/components/serving/kfserving/)
