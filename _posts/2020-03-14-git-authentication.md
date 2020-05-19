@@ -1,6 +1,6 @@
 ---
 title: Git Authentication
-description: "맨날 까먹지"
+description: "맨날 까먹지..."
 categories: [git]
 ---
 
