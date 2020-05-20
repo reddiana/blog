@@ -263,7 +263,7 @@ saved_model.pb
 
 ## 참고2: [Seldon Core](https://docs.seldon.io/projects/seldon-core/en/stable/) Inference Graph(Pipeline)
 
-![graph](2020-05-15-KFServing.assets/seldon-core-high-level.jpg) 
+![graph](https://docs.seldon.io/projects/seldon-core/en/stable/_images/seldon-core-high-level.jpg) 
 
 - https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html
 - https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale (p28)
