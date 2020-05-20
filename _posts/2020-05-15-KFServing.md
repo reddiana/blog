@@ -70,9 +70,9 @@ categories: [Kubeflow, ML Serving]
 
 - 방법3: [KFServing Python SDK](https://github.com/kubeflow/kfserving/blob/master/python/kfserving) ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb))
 
-## 4. InferenceService 유형
+## 4. InferenceService 구성요소 유형
 
-- 구성요소에 따른 구분
+- 역할에 따른 구분
   - Predictor
   - Transformer (Custom만 있음)
   - Explainer
