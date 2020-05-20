@@ -29,15 +29,15 @@ categories: [Kubeflow, ML Serving]
 
 - 필수
 - REST API path의 postfix가 `:predict`
-- model(예: Tensorflow SavedModel)의 serving만 있음
-  - storage에 저장된 model을 load하여 서비스
+- model의 serving을 수행
+  - storage에 저장된 trained model을 load하여 서비스
     - 지원하는 storage provider
       - Google Cloud Storage `gs://`
       - S3 Compatible Object Storage `s3://`
       - Azure Blob Storage `https://`
       - Local filesystem either `file://`
       - Persistent Volume Claim (PVC) `pvc://`
-  - model은 프로비저닝되어 제공되는 이미지(framework)에 따름
+  - trained model은 프로비저닝되어 제공되는 이미지(framework)에 따름
     - 제공되는 이미지 프로비저닝 https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec
       - tensorflow
       - tensorrt
