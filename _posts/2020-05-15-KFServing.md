@@ -38,8 +38,13 @@ categories: [Kubeflow, ML Serving]
       - Local filesystem either `file://`
       - Persistent Volume Claim (PVC) `pvc://`
   - model은 프로비저닝되어 제공되는 이미지(framework)에 따름
-    - 제공되는 이미지 프로비저닝 
-      - 
+    - 제공되는 이미지 프로비저닝 https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec
+      - tensorflow
+      - tensorrt
+      - xgboost
+      - sklearn
+      - onnx
+      - pytorch
 
 ### 2.2 Transformer
 
