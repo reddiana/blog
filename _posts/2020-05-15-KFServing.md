@@ -142,6 +142,7 @@ spec:
 ##### 4.2.2 [kfserving-custom-model](https://github.com/kubeflow/kfserving/tree/master/docs/samples/custom/kfserving-custom-model) 예제
 
 - kfserving.KFModel을 상속받고 load()와 predict()를 구현함
+- load()를 미리 호출하여 model을 restore한 후, 서버를 start()
 
 ```python
 import kfserving
