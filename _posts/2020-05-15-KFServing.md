@@ -86,7 +86,9 @@ categories: [Kubeflow, ML Serving]
   - 프로비저닝할 프레임워크(예: tensorflow, pytorch) 명시 필요 (이미지에 대한 기술 X) 
 - 모델이 저장된 위치 필요 (storageUri)
 
-##### 4.1.1 tensorflow 예제 yaml
+#### 4.1.1 [tensorflow](https://github.com/kubeflow/kfserving/tree/master/docs/samples/tensorflow) 예제 
+
+##### 4.1.1.1 manifests: [tensorflow.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/tensorflow/tensorflow.yaml)
 
 ```yaml
 apiVersion: "serving.kubeflow.org/v1alpha2"
@@ -100,7 +102,9 @@ spec:
         storageUri: "gs://kfserving-samples/models/tensorflow/flowers"
 ```
 
-##### 4.1.2 pytorch 예제 yaml
+#### 4.1.2 [pytorch](https://github.com/kubeflow/kfserving/tree/master/docs/samples/pytorch) 예제 
+
+##### 4.1.2.1 manifests: [pytorch.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/pytorch/pytorch.yaml)
 
 ```yaml
 apiVersion: "serving.kubeflow.org/v1alpha2"
@@ -119,7 +123,9 @@ spec:
 
 - 프로비저닝 이미지를 사용하지 않고 Custom 이미지를 사용
 
-##### 4.2.1 [Flask Hello World](https://github.com/kubeflow/kfserving/tree/master/docs/samples/custom/hello-world) 예제 yaml
+#### 4.2.1 [Flask Hello World](https://github.com/kubeflow/kfserving/tree/master/docs/samples/custom/hello-world) 예제
+
+##### 4.2.1.1 manifests: [custom.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/custom/hello-world/custom.yaml)
 
 ```yaml
 apiVersion: serving.kubeflow.org/v1alpha2
@@ -139,7 +145,59 @@ spec:
               value: "Python KFServing Sample"
 ```
 
-##### 4.2.2 [kfserving-custom-model](https://github.com/kubeflow/kfserving/tree/master/docs/samples/custom/kfserving-custom-model) 예제
+##### 4.2.1.2 [Dockerfile](https://github.com/kubeflow/kfserving/blob/master/docs/samples/custom/hello-world/Dockerfile)
+
+```dockerfile
+# ... 선략 ...
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
+```
+
+##### 4.2.1.3 application: [app.py](https://github.com/kubeflow/kfserving/blob/master/docs/samples/custom/hello-world/app.py)
+
+```python
+import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/v1/models/custom-sample:predict')
+def hello_world():
+    greeting_target = os.environ.get('GREETING_TARGET', 'World')
+    return 'Hello {}!\n'.format(greeting_target)
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+```
+
+#### 4.2.2 [kfserving-custom-model](https://github.com/kubeflow/kfserving/tree/master/docs/samples/custom/kfserving-custom-model) 예제
+
+##### 4.2.2.1 manifests: [custom.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/custom/kfserving-custom-model/custom.yaml)
+
+```yaml
+apiVersion: serving.kubeflow.org/v1alpha2
+kind: InferenceService
+metadata:
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: kfserving-custom-model
+spec:
+  default:
+    predictor:
+      custom:
+        container:
+          image: {username}/kfserving-custom-model
+```
+
+##### 4.2.2.2 [Dockerfile](https://github.com/kubeflow/kfserving/blob/master/docs/samples/custom/kfserving-custom-model/model-server/Dockerfile)
+
+```dockerfile
+# ... 선략 ...
+COPY model.py  imagenet_classes.txt ./
+
+CMD ["python", "model.py"]
+```
+
+##### 4.2.2.3 application: [model.py](https://github.com/kubeflow/kfserving/blob/master/docs/samples/custom/kfserving-custom-model/model-server/model.py)
 
 - kfserving.KFModel을 상속받고 load()와 predict()를 구현함
 - load()를 미리 호출하여 model을 restore한 후, 서버를 start()
@@ -172,6 +230,10 @@ if __name__ == "__main__":
 
 ### 4.3 [Transformer](https://github.com/kubeflow/kfserving/tree/master/docs/samples/transformer/image_transformer)
 
+#### 4.3.1 [Image Transformer with PyTorch Predictor](https://github.com/kubeflow/kfserving/blob/master/docs/samples/transformer/image_transformer) 예제
+
+##### 4.3.1.1 manifests: [image_transformer.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/transformer/image_transformer/image_transformer.yaml)
+
 ```yaml
 apiVersion: serving.kubeflow.org/v1alpha2
 kind: InferenceService
@@ -189,6 +251,15 @@ spec:
         modelClassName: Net
         storageUri: gs://kfserving-samples/models/pytorch/cifar10
 ```
+
+##### 4.3.1.2 [Dockerfile](https://github.com/kubeflow/kfserving/blob/master/docs/samples/transformer/image_transformer/transformer.Dockerfile)
+
+```dockerfile
+# ... 선략 ...
+ENTRYPOINT ["python", "-m", "image_transformer"]
+```
+
+##### 4.3.1.3 application: [image_transformer.py](https://github.com/kubeflow/kfserving/blob/master/docs/samples/transformer/image_transformer/image_transformer/image_transformer.py)
 
 - kfserving.KFModel을 상속받고 preprocess()와 postprocess()를 구현함
 
