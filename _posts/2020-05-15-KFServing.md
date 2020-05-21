@@ -1,4 +1,5 @@
 ---
+toc: true
 title: KFServing
 description: "Kubeflow Serving Component"
 categories: [Kubeflow, ML Serving]
