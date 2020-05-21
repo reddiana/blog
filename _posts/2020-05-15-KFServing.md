@@ -295,9 +295,32 @@ if __name__ == "__main__":
 
 - "방법3: KFServing Python SDK ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb))" 참조
 
-## 참고1: TensorFlow SavedModel
+## 참고1: [TensorFlow Model을 Save하는 방법](https://www.tensorflow.org/tutorials/keras/save_and_load?hl=ko)
 
-https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md
+### 체크포인트
+
+- 훈련 중간과 훈련 마지막에 체크포인트(checkpoint)를 저장 
+  - 다시 훈련하지 않고 모델을 재사용하거나 
+  - 훈련 과정이 중지된 경우 이어서 훈련을 진행 가능
+- `.ckpt` 파일
+  - 모델의 가중치를 포함하는 하나 이상의 샤드(shard)
+  - 가중치가 어느 샤드에 저장되어 있는지를 나타내는 인덱스 파일
+  - 모델 전체를 저장하지 않음 -> 모델 구조는 저장하지 않음
+
+### HDF5 ([Hierarchical Data Format](https://en.wikipedia.org/wiki/Hierarchical_Data_Format#HDF5))
+
+- 모델 전체를 저장
+- `.h5` 또는 `.hdf5` 파일
+  - 가중치 값
+  - 모델 설정(구조)
+  - 옵티마이저 설정
+
+### TensorFlow SavedModel
+
+-  language-neutral format to save machine-learned models -> Tensorflow Serving 등에서 사용
+- 모델 전체를 저장
+- Ref: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md
+- 저장 예제 코드
 
 ```python
 export_dir = ...
