@@ -10,8 +10,7 @@ toc: true
 # [KFServing](https://www.kubeflow.org/docs/components/serving/kfserving/)
 
 - Kubernetes [Custom Resource Definition(CRD)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) 으로 제공되는 ML Serving 아키텍처
-- serverless 
-  - 내부적으로 Knative 사용
+- serverless (내부적으로 Knative 사용)
 
 ![KFServing](https://www.kubeflow.org/docs/components/serving/kfserving.png) 
 
@@ -36,7 +35,7 @@ toc: true
       - Google Cloud Storage `gs://`
       - S3 Compatible Object Storage `s3://`
       - Azure Blob Storage `https://`
-      - Local filesystem either `file://`
+      - Local filesystem `file://`
       - Persistent Volume Claim (PVC) `pvc://`
   - trained model은 프로비저닝되어 제공되는 이미지(framework)에 따름
     - 제공되는 이미지 프로비저닝 https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec
