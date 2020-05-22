@@ -37,11 +37,17 @@ permalink: /post/:title
 #
 baseurl: "/blog" # the subpath of your site, e.g. "/blog".
 
+# Github and twitter are optional:
+minima:
+  social_links:
+    #twitter: fastdotai
+    github: everlearningemployee
+    facebook_username: everlearningemployee
+    youtube_channel: UCuqelMVE6ZKFhv8tP8n-FkA
+
 # Email and twitter are optional:
-email: everlearningemployee@gmail.com
+# email: everlearningemployee@gmail.com
 # twitter_username: "fastdotai"
-facebook_username: everlearningemployee
-youtube_channel: UCuqelMVE6ZKFhv8tP8n-FkA
 
 # Set this to true to get LaTeX math equation support
 use_math: true
