@@ -6,12 +6,10 @@ categories: [Kubeflow, MLServing, MLOps]
 toc: true
 ---
 
-[TOC]
-
-# [KFServing](https://www.kubeflow.org/docs/components/serving/kfserving/)
+## [KFServing이란](https://www.kubeflow.org/docs/components/serving/kfserving/)
 
 - Kubernetes [Custom Resource Definition(CRD)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) 으로 제공되는 ML Serving 아키텍처
-- serverless (내부적으로 Knative 사용)
+- Serverless로 동작 (내부적으로 Knative 사용)
 
 ![KFServing](https://www.kubeflow.org/docs/components/serving/kfserving.png) 
 

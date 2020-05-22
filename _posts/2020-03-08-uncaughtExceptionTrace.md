@@ -1,5 +1,4 @@
 ---
-toc: true
 title: "Uncaught Exception Trace"
 description: "언젠가 요긴할 것이다"
 layout: post
@@ -27,7 +26,9 @@ sys.excepthook = exception_hook
 
 1 / 0
 ```
+[전체 샘플 코드](https://gist.github.com/everlearningemployee/1746cd89615dfebed068345f5505d525)
 
+익셉션 트레이스가 로그에 이렇게 찍힌다
 ```less
 2020-03-08 17:51:52 ERROR ================================================================================
 2020-03-08 17:51:52 ERROR Type: <class 'IndexError'>
@@ -42,8 +43,6 @@ sys.excepthook = exception_hook
 2020-03-08 17:51:52 ERROR IndexError: tuple index out of range
 2020-03-08 17:51:52 ERROR --------------------------------------------------------------------------------
 ```
-
-<script src="https://gist.github.com/everlearningemployee/1746cd89615dfebed068345f5505d525.js"></script>
 
 - [Catching every single exception with Python](https://dev.to/joshuaschlichting/catching-every-single-exception-with-python-40o3) 
 - [파이썬 공식 자습서 - 8. 에러와 예외](https://docs.python.org/ko/3/tutorial/errors.html#errors-and-exceptions)
