@@ -1,5 +1,8 @@
 ---
 title: KFServing
+description: "Kubeflow Serving Solution"
+categories: [Kubeflow, MLServing, MLOps]
+toc: true
 ---
 
 [TOC]
