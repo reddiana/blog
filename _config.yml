@@ -15,7 +15,7 @@ github_repo: "blog"
 # OPTIONAL: override baseurl and url if using a custom domain
 # Note: leave out the trailing / from this value. 
 url: "https://everlearningemployee.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-permalink: /post/:title
+# permalink: /post/:title
 
 ###########################################################
 #########  Special Instructions for baseurl ###############
@@ -35,7 +35,8 @@ permalink: /post/:title
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "/blog" # the subpath of your site, e.g. "/blog".
+# baseurl: "/blog" # the subpath of your site, e.g. "/blog".
+baseurl: "" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
@@ -82,6 +83,7 @@ default_badges:
 # Escape HTML in post descriptions
 html_escape:
   description: false
+
 # Everything below here should be left alone. Modifications may break fastpages
 future: true
 theme: minima
@@ -100,8 +102,8 @@ plugins:
 
 # See https://jekyllrb.com/docs/pagination/
 # For pagination to work, you cannot have index.md at the root of your repo, instead you must rename this file to index.html
-# paginate: 15
-# paginate_path: /page:num/
+paginate: 15
+paginate_path: /page:num/
 
 remote_theme: jekyll/minima
 
