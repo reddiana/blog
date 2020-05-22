@@ -1,6 +1,6 @@
 <h3>
     <a class="post-link" href="{{ post.url | relative_url }}">
-    {{ post.title }}
+    {{ post.title | escape }}
     </a>
 </h3>
 {%- if site.show_description and post.description  -%}
