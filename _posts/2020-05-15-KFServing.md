@@ -1,8 +1,5 @@
 ---
-toc: true
 title: KFServing
-description: "Kubeflow Serving Component"
-categories: [Kubeflow, MLOps, MLServing]
 ---
 
 [TOC]
