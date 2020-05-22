@@ -1,6 +1,7 @@
 ---
 toc: true
-description: "Uncaught Exception Trace"
+title: "Uncaught Exception Trace"
+description: "언젠가 요긴할 것이다"
 categories: [python, exception]
 ---
 
