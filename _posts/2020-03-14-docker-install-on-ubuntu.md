@@ -1,7 +1,7 @@
 ---
-toc: true
 title: Ubuntu에 Docker 설치
 description: "CentOS보다 쉽다"
+layout: post
 categories: [docker, ubuntu]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Git Authentication
 description: "맨날 까먹지..."
+layout: post
 categories: [git]
 ---
 

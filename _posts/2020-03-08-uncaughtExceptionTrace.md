@@ -2,6 +2,7 @@
 toc: true
 title: "Uncaught Exception Trace"
 description: "언젠가 요긴할 것이다"
+layout: post
 categories: [python, exception]
 ---
 
