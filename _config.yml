@@ -15,7 +15,6 @@ github_repo: "blog"
 # OPTIONAL: override baseurl and url if using a custom domain
 # Note: leave out the trailing / from this value. 
 url: "https://everlearningemployee.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# permalink: /post/:title
 
 ###########################################################
 #########  Special Instructions for baseurl ###############
@@ -35,13 +34,13 @@ url: "https://everlearningemployee.github.io" # the base hostname & protocol for
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-# baseurl: "/blog" # the subpath of your site, e.g. "/blog".
-baseurl: "" # the subpath of your site, e.g. "/blog".
+baseurl: "/blog" # the subpath of your site, e.g. "/blog".
+#baseurl: "" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
   social_links:
-    #twitter: fastdotai
+    #twitter: everlearningemployee
     github: everlearningemployee
     facebook_username: everlearningemployee
     youtube_channel: UCuqelMVE6ZKFhv8tP8n-FkA
