@@ -3,6 +3,7 @@ title: Python TDD
 description: "테스트도 안하고 언제까지 그렇게 살텐가"
 layout: post
 toc: true
+comments: true
 categories: [python, tdd, pytest, test]
 ---
 
