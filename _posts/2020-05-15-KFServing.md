@@ -37,7 +37,7 @@ toc: true
       - Local filesystem `file://`
       - Persistent Volume Claim (PVC) `pvc://`
   - trained model은 프로비저닝되어 제공되는 이미지(framework)에 따름
-    - 제공되는 이미지 프로비저닝 https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec
+    - [제공되는 이미지 프로비저닝](https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec)
       - tensorflow
       - tensorrt
       - xgboost
@@ -76,7 +76,7 @@ toc: true
   - Transformer (Custom만 있음)
   - Explainer
 - 이미지 프로비저닝 여부에 따른 구분
-  - [Out-of-the-box](https://m.blog.naver.com/yangseungjae/220708695668) <- 프로비저닝된 이미지 사용
+  - [Out-of-the-box](https://m.blog.naver.com/yangseungjae/220708695668) ← 프로비저닝된 이미지 사용
   - Custom
 
 ### 4.1 [Out-of-the-box Predictor](https://github.com/kubeflow/kfserving/tree/master/docs/samples#deploy-kfserving-inferenceservice-with-out-of-the-box-predictor)
@@ -298,13 +298,13 @@ if __name__ == "__main__":
 
 ### 체크포인트
 
-- 훈련 중간과 훈련 마지막에 체크포인트(checkpoint)를 저장 
-  - 다시 훈련하지 않고 모델을 재사용하거나 
-  - 훈련 과정이 중지된 경우 이어서 훈련을 진행 가능
+- training 중간과 training 마지막에 체크포인트(checkpoint)를 저장 
+  - 다시 training 하지 않고 모델을 재사용하거나 
+  - training  과정이 중지된 경우 이어서 training을 진행 가능
 - `.ckpt` 파일
   - 모델의 가중치를 포함하는 하나 이상의 샤드(shard)
   - 가중치가 어느 샤드에 저장되어 있는지를 나타내는 인덱스 파일
-  - 모델 전체를 저장하지 않음 -> 모델 구조는 저장하지 않음
+  - 모델 전체를 저장하지 않음 → 모델 구조는 저장하지 않음
 
 ### HDF5 ([Hierarchical Data Format](https://en.wikipedia.org/wiki/Hierarchical_Data_Format#HDF5))
 
@@ -316,9 +316,9 @@ if __name__ == "__main__":
 
 ### TensorFlow SavedModel
 
--  language-neutral format to save machine-learned models -> Tensorflow Serving 등에서 사용
+-  language-neutral format to save machine-learned models → Tensorflow Serving 등에서 사용
 - 모델 전체를 저장
-- Ref: https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md
+- Ref: [https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/saved_model#tensorflow-savedmodel](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/python/saved_model#tensorflow-savedmodel)
 - 저장 예제 코드
 
 ```python
@@ -359,6 +359,6 @@ saved_model.pb
 
 ![graph](https://docs.seldon.io/projects/seldon-core/en/stable/_images/seldon-core-high-level.jpg) 
 
-- https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html
-- https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale (p28)
+- [https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html](https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html)
+- [https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale](https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale) (p28)
 
