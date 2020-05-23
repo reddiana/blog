@@ -292,7 +292,7 @@ if __name__ == "__main__":
 
 ### 5.2 Client
 
-- "방법3: KFServing Python SDK ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb))" 참조
+- "3. InferenceService 배포 / 방법3: KFServing Python SDK ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb))" 참조
 
 ## 참고1: [TensorFlow Model을 Save하는 방법](https://www.tensorflow.org/tutorials/keras/save_and_load?hl=ko)
 
