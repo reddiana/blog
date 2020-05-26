@@ -28,7 +28,7 @@ toc: true
 
 - 필수
 - REST API path의 postfix가 `:predict`
-- model의 serving을 수행
+- trained model의 serving을 수행
   - storage에 저장된 trained model을 load하여 서비스
     - 지원하는 storage provider
       - Google Cloud Storage `gs://`
@@ -73,7 +73,7 @@ toc: true
 
 - 역할에 따른 구분
   - Predictor
-  - Transformer (Custom만 있음)
+  - Transformer
   - Explainer
 - 이미지 프로비저닝 여부에 따른 구분
   - [Out-of-the-box](https://m.blog.naver.com/yangseungjae/220708695668) ← 프로비저닝된 이미지 사용
