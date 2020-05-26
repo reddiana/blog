@@ -3,7 +3,6 @@ title: "Kafka를 공부해보자"
 description: "Kafka 정도는 알아줘야지"
 toc: true
 layout: post
-comments: true
 categories: [kafka, hello]
 ---
 
