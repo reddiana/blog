@@ -48,7 +48,9 @@ toc: true
 ### 2.2 Transformer
 
 - 필수아님
-- prediction 또는 explanation의 실행 전/후에 수행될 로직이 탑재
+- prediction 또는 explanation의 실행 전/후에 수행될 로직을 탑재 (preprocess/postprocess) → 전처리 / 후처리 용도
+- Interceptioon Filter로서 동작
+  ![KFServing-transrofmer](../images/2020-05-15-KFServing/KFServing-transrofmer.png) 
 
 ### 2.3 Explainer
 
