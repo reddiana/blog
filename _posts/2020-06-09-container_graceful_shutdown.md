@@ -5,9 +5,7 @@ layout: post
 categories: [Python, Container, stopsignal, Docker, SIGTERM]
 ---
 
-# Graceful Shutdown
-
-## 문제점
+## 필요한 이유
 
 - 롱트랜잭션 실행 중일 때 shutdown 한다면?
 - 서비스 업데이트 등의 상황으로 k8s가 pod 종료 시도할 때
