@@ -1,4 +1,257 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-06-13T10:28:55-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">Python Graceful Shutdown</title><link href="https://everlearningemployee.github.io/blog/post/python_graceful_shutdown.html" rel="alternate" type="text/html" title="Python Graceful Shutdown" /><published>2020-06-09T00:00:00-05:00</published><updated>2020-06-09T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/python_graceful_shutdown</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/python_graceful_shutdown.html">&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Blueprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-07-08T00:38:37-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">Container Graceful Shutdown</title><link href="https://everlearningemployee.github.io/blog/post/container_graceful_shutdown.html" rel="alternate" type="text/html" title="Container Graceful Shutdown" /><published>2020-06-09T00:00:00-05:00</published><updated>2020-06-09T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/container_graceful_shutdown</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/container_graceful_shutdown.html">&lt;h1 id=&quot;graceful-shutdown&quot;&gt;Graceful Shutdown&lt;/h1&gt;
+
+&lt;h2 id=&quot;문제점&quot;&gt;문제점&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;롱트랜잭션 실행 중일 때 shutdown 한다면?&lt;/li&gt;
+  &lt;li&gt;서비스 업데이트 등의 상황으로 k8s가 pod 종료 시도할 때&lt;/li&gt;
+  &lt;li&gt;pod가 처리 중인 상태에서 강제로 kill 될 가능성 농후&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;1안-sigterm에-대한-처리-구현&quot;&gt;1안) SIGTERM에 대한 처리 구현&lt;/h3&gt;
+
+&lt;h4 id=&quot;python-conatiner&quot;&gt;Python Conatiner&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;signal trap으로 구현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;restful-api-contaner&quot;&gt;RESTful API Contaner&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Supervisord  설정&lt;/p&gt;
+
+    &lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;py&quot;&gt;stopsignal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;HUP&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;stopwaitsecs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;uWSGI&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;뭔짓을 해도 python에서 trap을 하지 못한다&lt;/li&gt;
+      &lt;li&gt;그나마 graceful하게 reload은 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;시나리오1&quot;&gt;시나리오1&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;docker stop하면&lt;/li&gt;
+  &lt;li&gt;Supervisord에서 HUP 보내고&lt;/li&gt;
+  &lt;li&gt;uWSGI는 graceful reload (이뭐병)&lt;/li&gt;
+  &lt;li&gt;(결과적으로 uWSGI랑 상관없이) Supervisord는 10초 기다렸다 kill all&lt;/li&gt;
+  &lt;li&gt;아직 안 죽었으면 docker는 time 기다리고 kill&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;시나리오2&quot;&gt;시나리오2&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;그냥 K8s에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;terminationGracePeriodSeconds&lt;/code&gt;을 길게 준다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;signalipc&quot;&gt;Signal(IPC)&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.quora.com/What-is-the-difference-between-the-SIGINT-and-SIGTERM-signals-in-Linux-What%E2%80%99s-the-difference-between-the-SIGKILL-and-SIGSTOP-signals&quot;&gt;SIGINT SIGTERM SIGKILL SIGSTOP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Signal_(IPC)&quot;&gt;Signal (IPC)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;signal&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;can be caught or ignored&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SIGINT&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;O&lt;/td&gt;
+      &lt;td&gt;interrupt signal&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;ctrl-c&lt;/strong&gt;. to provide a mechanism for an orderly, &lt;strong&gt;graceful shutdown&lt;/strong&gt;. “user-initiated &lt;strong&gt;happy&lt;/strong&gt; termination”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SIGTERM&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;O&lt;/td&gt;
+      &lt;td&gt;termination signal&lt;/td&gt;
+      &lt;td&gt;to kill the process, &lt;strong&gt;gracefully&lt;/strong&gt; or not, but to first allow it a chance to cleanup.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SIGKILL&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;X&lt;/td&gt;
+      &lt;td&gt;kill signal&lt;/td&gt;
+      &lt;td&gt;프로세스 &lt;strong&gt;즉시&lt;/strong&gt; 죽임!! 최후의 수단!!&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SIGQUIT&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;O&lt;/td&gt;
+      &lt;td&gt;dump core signal&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;ctrl-\&lt;/strong&gt;. to provide a mechanism for the user to abort the process. “user-initiated &lt;strong&gt;unhappy&lt;/strong&gt; termination”&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIGHUP&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;Terminate&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SIGSTOP&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;X&lt;/td&gt;
+      &lt;td&gt;pause signal&lt;/td&gt;
+      &lt;td&gt;resuming via &lt;code class=&quot;highlighter-rouge&quot;&gt;SIGCONT&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIGCHLD&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;Child process terminated, stopped, or continued&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIGWINCH&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;python에서-처리&quot;&gt;Python에서 처리&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3.7/library/signal.html&quot;&gt;Python에서 처리: signal — Set handlers for asynchronous events&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;https://codeday.me/ko/qa/20190529/660372.html (Python 2.X)&lt;/li&gt;
+  &lt;li&gt;https://code-examples.net/ko/docs/python~3.7/library/signal&lt;/li&gt;
+  &lt;li&gt;http://blog.kichul.co.kr/2018/01/12/python%EC%97%90%EC%84%9C-signal-%EC%B2%98%EB%A6%AC/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;uwsgi에서-처리&quot;&gt;uWSGI에서 처리&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.techatbloomberg.com/blog/configuring-uwsgi-production-deployment/&quot;&gt;Configuring uWSGI for Production Deployment&lt;/a&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;아래 설정 절대 안 먹는다. 해도 python에서 signal trap 안된다.&lt;/p&gt;
+
+        &lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;py&quot;&gt;py-call-osafterfork&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;하긴 먹어도 쓸데가 없다&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://uwsgi-docs.readthedocs.io/en/latest/Management.html#signals-for-controlling-uwsgi&quot;&gt;Signals for controlling uWSGI&lt;/a&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;graceful하게 shutdown하는게 &lt;strong&gt;없다!!&lt;/strong&gt; 나머지는 그냥 immediately kill 해버린다
+        &lt;ul&gt;
+          &lt;li&gt;SIGHUP이 그나마 graceful 한데 reload를 해버린다&lt;/li&gt;
+          &lt;li&gt;얼씨구 Windows는 SIGHUP이 없다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Signal&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;Convenience command&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIGHUP&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;gracefully reload&lt;/strong&gt; all the workers and the master process&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--reload&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIGTERM&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;brutally reload&lt;/strong&gt; all the workers and the master process&lt;/td&gt;
+      &lt;td&gt;(use &lt;code class=&quot;highlighter-rouge&quot;&gt;--die-on-term&lt;/code&gt; to respect the convention of shutting down the instance)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIGINT&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;immediately&lt;/strong&gt; kill the entire uWSGI stack&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--stop&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIGQUIT&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;immediately&lt;/strong&gt; kill the entire uWSGI stack&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;supervisord에서-처리&quot;&gt;Supervisord에서 처리&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://serverfault.com/questions/386319/is-supervisord-shutting-down-gracefully
+    &lt;ul&gt;
+      &lt;li&gt;야간데…&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stopsignal&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;The signal used to kill the program when a stop is requested.  This can be any of TERM, HUP, INT, QUIT, KILL, USR1, or USR2.&lt;/li&gt;
+          &lt;li&gt;&lt;em&gt;Default&lt;/em&gt;: TERM&lt;/li&gt;
+          &lt;li&gt;&lt;em&gt;Required&lt;/em&gt;:  No.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stopwaitsecs&lt;/code&gt;
+        &lt;ul&gt;
+          &lt;li&gt;The number of seconds to wait for the OS to return a SIGCHLD to &lt;strong&gt;supervisord&lt;/strong&gt; after the program has been sent a stopsignal. If this number of seconds elapses before &lt;strong&gt;supervisord&lt;/strong&gt; receives a SIGCHLD from the process, &lt;strong&gt;supervisord&lt;/strong&gt; will attempt to kill it with a final SIGKILL.&lt;/li&gt;
+          &lt;li&gt;&lt;em&gt;Default&lt;/em&gt;: 10&lt;/li&gt;
+          &lt;li&gt;&lt;em&gt;Required&lt;/em&gt;:  No.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;docker에서-처리&quot;&gt;Docker에서 처리&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/&quot;&gt;Gracefully Stopping Docker Containers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;https://codeday.me/ko/qa/20190529/660372.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;k8s에서-처리&quot;&gt;K8s에서 처리&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://pracucci.com/graceful-shutdown-of-kubernetes-pods.html&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://kubernetes.io/docs/user-guide/pods/#termination-of-pods&quot;&gt;Kubernetes: Termination of pods&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://kubernetes.io/docs/user-guide/production-pods/#lifecycle-hooks-and-termination-notice&quot;&gt;Kubernetes: Pods lifecycle hooks and termination notice&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://kubernetes.io/docs/user-guide/container-environment/&quot;&gt;Kubernetes: Container lifecycle hooks&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tech.kakao.com/2018/12/24/kubernetes-deploy/&quot;&gt;kubernetes를 이용한 서비스 무중단 배포&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;terminationGracePeriodSeconds&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2안-재처리&quot;&gt;2안) 재처리&lt;/h3&gt;
+
+&lt;h3 id=&quot;3안-운영-프로세스로-해결&quot;&gt;3안) 운영 프로세스로 해결&lt;/h3&gt;
+
+&lt;p&gt;shutdown 필요할 시&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;request 더이상 발생 안되게 조치 하고&lt;/li&gt;
+  &lt;li&gt;충분한 시간 경과 후 (request 처리 중이던 pod가 처리를 모두 마친 후)&lt;/li&gt;
+  &lt;li&gt;shutdown 진행&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;python-signal-trap-예&quot;&gt;python signal trap 예&lt;/h3&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Blueprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;# Graceful Shutdown (signal 처리) 구현
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imBusy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
@@ -33,7 +286,7 @@
     &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;remove [&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s]&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;imBusy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">```python app = flask.Blueprint(‘app’, name)</summary></entry><entry><title type="html">Python 함수 실행시간 측정 decorator</title><link href="https://everlearningemployee.github.io/blog/post/Python_decorator_to_measure_the_execution_time_of_methods.html" rel="alternate" type="text/html" title="Python 함수 실행시간 측정 decorator" /><published>2020-06-09T00:00:00-05:00</published><updated>2020-06-09T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/Python_decorator_to_measure_the_execution_time_of_methods</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/Python_decorator_to_measure_the_execution_time_of_methods.html">&lt;h3 id=&quot;함수-실행시간-측정용-decorator-정의&quot;&gt;함수 실행시간 측정용 decorator 정의&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">Graceful Shutdown</summary></entry><entry><title type="html">Python 함수 실행시간 측정 decorator</title><link href="https://everlearningemployee.github.io/blog/post/Python_decorator_to_measure_the_execution_time_of_methods.html" rel="alternate" type="text/html" title="Python 함수 실행시간 측정 decorator" /><published>2020-06-09T00:00:00-05:00</published><updated>2020-06-09T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/Python_decorator_to_measure_the_execution_time_of_methods</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/Python_decorator_to_measure_the_execution_time_of_methods.html">&lt;h3 id=&quot;함수-실행시간-측정용-decorator-정의&quot;&gt;함수 실행시간 측정용 decorator 정의&lt;/h3&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;exec_time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wraps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
