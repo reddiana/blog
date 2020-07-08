@@ -2,7 +2,7 @@
 title: Container Graceful Shutdown
 description: "세련되게 살자"
 layout: post
-categories: [Python][Container][Docker][SIGTERM]
+categories: [Python, Container, stopsignal, Docker, SIGTERM]
 ---
 
 # Graceful Shutdown
