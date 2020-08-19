@@ -222,23 +222,8 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">quandl</span>
 <span class="n">pmi</span> <span class="o">=</span> <span class="n">quandl</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"ISM/MAN_PMI"</span><span class="p">)</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rcnt_pmi</span> <span class="o">=</span> <span class="n">pmi</span><span class="p">[</span><span class="s1">'2015-01-01'</span><span class="p">:]</span>
+<span class="n">rcnt_pmi</span> <span class="o">=</span> <span class="n">pmi</span><span class="p">[</span><span class="s1">'2015-01-01'</span><span class="p">:]</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">rcnt_pmi</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -256,7 +241,7 @@ window.onload = wrap_img;
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.lines.Line2D at 0x1e5ced1dc88&gt;</pre>
+<pre>&lt;matplotlib.lines.Line2D at 0x243ed722708&gt;</pre>
 </div>
 
 </div>
