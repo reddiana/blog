@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-12T10:46:29-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">Container Graceful Shutdown</title><link href="https://everlearningemployee.github.io/blog/post/container_graceful_shutdown.html" rel="alternate" type="text/html" title="Container Graceful Shutdown" /><published>2020-06-09T00:00:00-05:00</published><updated>2020-06-09T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/container_graceful_shutdown</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/container_graceful_shutdown.html">&lt;h2 id=&quot;필요한-이유&quot;&gt;필요한 이유&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-18T21:45:59-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">경제지표</title><link href="https://everlearningemployee.github.io/blog/post/Economic_indicators.html" rel="alternate" type="text/html" title="경제지표" /><published>2020-08-19T00:00:00-05:00</published><updated>2020-08-19T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/Economic_indicators</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/Economic_indicators.html">&lt;h2 id=&quot;구매&quot;&gt;구매&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;지수명&lt;/th&gt;
+      &lt;th&gt;약어&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+      &lt;th&gt;+&lt;/th&gt;
+      &lt;th&gt;-&lt;/th&gt;
+      &lt;th&gt;비고&lt;/th&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ISM 제조업 구매관리자 지수&lt;/td&gt;
+      &lt;td&gt;PMI&lt;/td&gt;
+      &lt;td&gt;‘구매부장님협회’ 쯤&lt;/td&gt;
+      &lt;td&gt;경기확장&lt;/td&gt;
+      &lt;td&gt;경기위축&lt;/td&gt;
+      &lt;td&gt;기준: 50&lt;/td&gt;
+      &lt;td&gt;https://kr.investing.com/economic-calendar/ism-manufacturing-pmi-173&lt;br /&gt;https://youtu.be/w3DHeB62cfA&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ISM 제조업 신규주문 지수&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ISM 서비스업 구매관지라 지수&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;중국 차이신 제조업 구매관리자 지수&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;원자재&quot;&gt;원자재&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;지수명&lt;/th&gt;
+      &lt;th&gt;약어&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+      &lt;th&gt;+&lt;/th&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;원유&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;구리 선물&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;https://kr.investing.com/commodities/copper&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;고용지표&quot;&gt;고용지표&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;지수명&lt;/th&gt;
+      &lt;th&gt;약어&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+      &lt;th&gt;+&lt;/th&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;미국 신규실업수당 청구건수&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;미국 실업률&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name></name></author><summary type="html">구매</summary></entry><entry><title type="html">Container Graceful Shutdown</title><link href="https://everlearningemployee.github.io/blog/post/container_graceful_shutdown.html" rel="alternate" type="text/html" title="Container Graceful Shutdown" /><published>2020-06-09T00:00:00-05:00</published><updated>2020-06-09T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/container_graceful_shutdown</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/container_graceful_shutdown.html">&lt;h2 id=&quot;필요한-이유&quot;&gt;필요한 이유&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;롱트랜잭션 실행 중일 때 shutdown 한다면?&lt;/li&gt;
@@ -747,7 +873,15 @@ saved_model.pb
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html&quot;&gt;https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale&quot;&gt;https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale&lt;/a&gt; (p28)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">KFServing이란</summary></entry><entry><title type="html">Git Authentication</title><link href="https://everlearningemployee.github.io/blog/post/git-authentication.html" rel="alternate" type="text/html" title="Git Authentication" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/git-authentication</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/git-authentication.html">&lt;ul&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">KFServing이란</summary></entry><entry><title type="html">Ubuntu에 Docker 설치</title><link href="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html" rel="alternate" type="text/html" title="Ubuntu에 Docker 설치" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html">&lt;p&gt;출처: &lt;a href=&quot;https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04&quot;&gt;How To Install Docker On Ubuntu 18.04 Bionic Beaver&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get remove docker docker-engine docker.io
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;docker.io
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start docker
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;docker
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; docker &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver</summary></entry><entry><title type="html">Git Authentication</title><link href="https://everlearningemployee.github.io/blog/post/git-authentication.html" rel="alternate" type="text/html" title="Git Authentication" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/git-authentication</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/git-authentication.html">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://medium.com/@ginnyfahs/github-error-authentication-failed-from-command-line-3a545bfd0ca8&quot;&gt;GitHub Error: Authentication Failed from the Command Line&lt;/a&gt;&lt;/p&gt;
 
@@ -761,15 +895,7 @@ saved_model.pb
     &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config credential.helper store
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">GitHub Error: Authentication Failed from the Command Line 사용자 Settings &amp;gt; Developer settings &amp;gt; Personal access tokens Git pull/push 시 Password 물어보지 않도록 설정하기(credential.helper) git config credential.helper store</summary></entry><entry><title type="html">Ubuntu에 Docker 설치</title><link href="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html" rel="alternate" type="text/html" title="Ubuntu에 Docker 설치" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html">&lt;p&gt;출처: &lt;a href=&quot;https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04&quot;&gt;How To Install Docker On Ubuntu 18.04 Bionic Beaver&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get remove docker docker-engine docker.io
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;docker.io
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start docker
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;docker
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; docker &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver</summary></entry><entry><title type="html">Python TDD</title><link href="https://everlearningemployee.github.io/blog/post/hello-pytest.html" rel="alternate" type="text/html" title="Python TDD" /><published>2020-03-12T00:00:00-05:00</published><updated>2020-03-12T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/hello-pytest</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/hello-pytest.html">&lt;h1 id=&quot;python-tdd&quot;&gt;Python TDD&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">GitHub Error: Authentication Failed from the Command Line 사용자 Settings &amp;gt; Developer settings &amp;gt; Personal access tokens Git pull/push 시 Password 물어보지 않도록 설정하기(credential.helper) git config credential.helper store</summary></entry><entry><title type="html">Python TDD</title><link href="https://everlearningemployee.github.io/blog/post/hello-pytest.html" rel="alternate" type="text/html" title="Python TDD" /><published>2020-03-12T00:00:00-05:00</published><updated>2020-03-12T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/hello-pytest</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/hello-pytest.html">&lt;h1 id=&quot;python-tdd&quot;&gt;Python TDD&lt;/h1&gt;
 
 &lt;h2 id=&quot;참고자료&quot;&gt;참고자료&lt;/h2&gt;
 
@@ -1470,8 +1596,4 @@ kafka-console-consumer &lt;span class=&quot;nt&quot;&gt;--bootstrap-server&lt;/s
 
 &lt;h2 id=&quot;git&quot;&gt;Git&lt;/h2&gt;
 
-&lt;p&gt;https://github.com/everlearningemployee/leo.git&lt;/p&gt;</content><author><name></name></author><summary type="html">Leo - Korbit 트레이딩봇 배경지식 리밸런싱 [기고] 수익률 높이는 효과적인 리밸런싱 전략 자산배분전략을 자주 강조하는 이유 : 장기 성과의 중요 자산의 리밸런싱(rebalancing) 가상화폐 거래소 코빗 코빗 거래수수료 거래수수료 구분 코빗은 더이상 Taker/Maker 수수료를 구분하지 않는다. 신경 안 써도 됨 Taker 주문 : 즉시 체결되는 주문 시장가로 주문 지정가 주문 시, 이미 오더북에 올라와있는 주문과 동일한 금액으로 주문 지정가 매수 주문 시, 체결 가능한 호가보다 높은 가격으로 주문 최고 매수호가 &amp;lt; 매수주문가 → 비싸게 사겠다고 하니까 즉시 체결 지정가 매도 주문 시, 체결 가능한 호가보다 낮은 가격으로 주문 최저 매도호가 &amp;gt; 매도주문가 → 싸게 팔겠다고 하니까 즉시 체결 Maker 주문 : 즉시 체결되지 않는 주문 지정가 매수 주문 시, 체결 가능한 호가보다 낮은 가격으로 주문 최고 매수호가 &amp;gt; 매수주문가 → 싸게 사겠다고 하는 무리 중 하나 지정가 매도 주문 시, 체결 가능한 호가보다 높은 가격으로 주문 최저 매도호가 &amp;lt; 매도주문가 → 비싸게 팔겠다고 하는 무리 중 하나 용어 최근내주문체결가: 나의 주문 중 마지막으로 체결된 거래의 거래가 목표 밸런싱비율: “코인 평가금액 : 예수금잔고”의 목표 비율 거래트리거링가격변동포인트: 이 %포인트 만큼 체결가 변동이 일어나면 리밸런싱한다 제약조건 tick_size 호가단위 min_price 최소 주문가 order_min_size 최소 주문량 max_price 최대 주문가 order_max_size 최대 주문량 수수료 volume 해당 통화쌍의 30일간의 거래량(KRW) maker_fee 베이시스 포인트(BPS - 1/100 퍼센트 기준)로 표기된 maker 거래 수수료율 taker_fee 베이시스 포인트(BPS - 1/100 퍼센트 기준)로 표기된 taker 거래 수수료율 로직 주문가/주문량 산출 파라미터/변수 입력 입력값 $b$ 목표 밸런싱비율 $t$ 거래트리거링가격변동포인트 체결된 주문내역 $p_f$ 최근내주문체결가 잔고 조회 $a_i$ 코인보유량 $v_c$ 현금(예수금잔고) env constans (제약조건) $a_m$ 최소주문량 시장 현황 상세정보 bid: 최고 매수호가 현재 매수 주문 중 가장 높은 가격 ask: 최저 매도호가 현재 매도 주문 중 가장 낮은 가격 중간값 $v_e$ 거래직전 평가액 $v_o$ 주문금액 리턴 $p_o$ 주문가 $a_o$ 주문량 로직 매수 목표밸런싱비율 $b$ 는 입력값으로 고정이다 b=ve+vovc−vob = {v_e + v_o \over v_c - v_o}b=vc​−vo​ve​+vo​​ 여기서 vo=ao⋅pov_o = a_o \cdot p_ovo​=ao​⋅po​ ve=ai⋅pov_e = a_i \cdot p_ove​=ai​⋅po​ 따라서 주문량 $a_o$는 ao=b⋅vc−po⋅aipo⋅(1+b)a_o = { b \cdot v_c - p_o \cdot a_i \over p_o \cdot (1 + b) }ao​=po​⋅(1+b)b⋅vc​−po​⋅ai​​ 여기서 주문가 $p_o$는 po=pf⋅(1−t)p_o = p_f \cdot (1 - t)po​=pf​⋅(1−t) 만약 주문량 $a_o$이 최소주문량 $a_m$보다 작다면 ao&amp;lt;ama_o &amp;lt; a_mao​&amp;lt;am​ 주문량 $a_o$를 최소주문량 $a_m$으로 설정한다 ao:=ama_o := a_mao​:=am​ 이 때 주문가 $p_o$는 po=b⋅vcai+am⋅(1+b)p_o = { b \cdot v_c \over a_i + a_m \cdot ( 1 + b ) }po​=ai​+am​⋅(1+b)b⋅vc​​ 매도 목표밸런싱비율 $b$ 는 입력값으로 고정이다 b=ve−vovc+vob = {v_e - v_o \over v_c + v_o}b=vc​+vo​ve​−vo​​ 여기서 vo=ao⋅pov_o = a_o \cdot p_ovo​=ao​⋅po​ ve=ai⋅pov_e = a_i \cdot p_ove​=ai​⋅po​ 따라서 주문량 $a_o$는 ao=po⋅ai−b⋅vcpo⋅(1+b)a_o = { p_o \cdot a_i - b \cdot v_c \over p_o \cdot (1 + b) }ao​=po​⋅(1+b)po​⋅ai​−b⋅vc​​ 여기서 주문가 $p_o$는 po=pf⋅(1+t)p_o = p_f \cdot (1 + t)po​=pf​⋅(1+t) 만약 주문량 $a_o$이 최소주문량 $a_m$보다 작다면 ao&amp;lt;ama_o &amp;lt; a_mao​&amp;lt;am​ 주문량 $a_o$를 최소주문량 $a_m$으로 설정한다 ao:=ama_o := a_mao​:=am​ 이 때 주문가 $p_o$는 po=b⋅vcai−am⋅(1+b)p_o = { b \cdot v_c \over a_i - a_m \cdot ( 1 + b) }po​=ai​−am​⋅(1+b)b⋅vc​​ 로깅 주문 매수주문, 매도주문 호출 성공 후 로깅 주문ID (매수주문, 매도주문) 매도매수구분 (입력값) 주문가 (주문가/주문량 산출 로직 리턴값) 주문량 (주문가/주문량 산출 로직 리턴값) 산출베이스체결ID (체결된 주문내역) 주문가/주문량 산출 로직 입력값 $b$ 목표 밸런싱비율 (입력값) $t$ 거래트리거링가격변동포인트 (입력값) $p_f$ 최근내주문체결가 (체결된 주문내역) $a_i$ 코인보유량 (잔고 조회) $v_c$ 현금(예수금잔고) (잔고 조회) bid: 최고 매수호가 현재 매수 주문 중 가장 높은 가격 (시장 현황 상세정보) ask: 최저 매도호가 현재 매도 주문 중 가장 낮은 가격 (시장 현황 상세정보) last: 최종 체결 가격 (시장 현황 상세정보) 체결 체결된 주문내역 확인 후 로깅 그냥 json 그대로 저장할까? 체결된 주문내역 리턴값 체결ID 매도매수구분 체결시각 수수료 통화: 매수 시 코인, 매도 시 krw 수량 주문ID 체결가 통화 수량 체결량 통화 수량 잔고 조회 리턴값 코인보유량 현금(예수금잔고) Git https://github.com/everlearningemployee/leo.git</summary></entry><entry><title type="html">파이썬 기초 5종 세트!! [설치, 헬로우월드, VSCode, pip, 가상환경] 이 모든 것을 한 영상에!!</title><link href="https://everlearningemployee.github.io/blog/post/hello-python.html" rel="alternate" type="text/html" title="파이썬 기초 5종 세트!! [설치, 헬로우월드, VSCode, pip, 가상환경] 이 모든 것을 한 영상에!!" /><published>2019-11-30T00:00:00-06:00</published><updated>2019-11-30T00:00:00-06:00</updated><id>https://everlearningemployee.github.io/blog/post/hello-python</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/hello-python.html">&lt;h1 id=&quot;파이썬-기초-5종-세트&quot;&gt;파이썬 기초 5종 세트!!&lt;/h1&gt;
-
-&lt;iframe width=&quot;720&quot; height=&quot;405&quot; src=&quot;https://www.youtube.com/embed/7wrNy8fPkj4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://gist.github.com/everlearningemployee/673cf8bc1e817ae4fa695ce38d2331dc&quot;&gt;실습 시나리오 + 코드&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">파이썬 기초 5종 세트!!</summary></entry></feed>
+&lt;p&gt;https://github.com/everlearningemployee/leo.git&lt;/p&gt;</content><author><name></name></author><summary type="html">Leo - Korbit 트레이딩봇 배경지식 리밸런싱 [기고] 수익률 높이는 효과적인 리밸런싱 전략 자산배분전략을 자주 강조하는 이유 : 장기 성과의 중요 자산의 리밸런싱(rebalancing) 가상화폐 거래소 코빗 코빗 거래수수료 거래수수료 구분 코빗은 더이상 Taker/Maker 수수료를 구분하지 않는다. 신경 안 써도 됨 Taker 주문 : 즉시 체결되는 주문 시장가로 주문 지정가 주문 시, 이미 오더북에 올라와있는 주문과 동일한 금액으로 주문 지정가 매수 주문 시, 체결 가능한 호가보다 높은 가격으로 주문 최고 매수호가 &amp;lt; 매수주문가 → 비싸게 사겠다고 하니까 즉시 체결 지정가 매도 주문 시, 체결 가능한 호가보다 낮은 가격으로 주문 최저 매도호가 &amp;gt; 매도주문가 → 싸게 팔겠다고 하니까 즉시 체결 Maker 주문 : 즉시 체결되지 않는 주문 지정가 매수 주문 시, 체결 가능한 호가보다 낮은 가격으로 주문 최고 매수호가 &amp;gt; 매수주문가 → 싸게 사겠다고 하는 무리 중 하나 지정가 매도 주문 시, 체결 가능한 호가보다 높은 가격으로 주문 최저 매도호가 &amp;lt; 매도주문가 → 비싸게 팔겠다고 하는 무리 중 하나 용어 최근내주문체결가: 나의 주문 중 마지막으로 체결된 거래의 거래가 목표 밸런싱비율: “코인 평가금액 : 예수금잔고”의 목표 비율 거래트리거링가격변동포인트: 이 %포인트 만큼 체결가 변동이 일어나면 리밸런싱한다 제약조건 tick_size 호가단위 min_price 최소 주문가 order_min_size 최소 주문량 max_price 최대 주문가 order_max_size 최대 주문량 수수료 volume 해당 통화쌍의 30일간의 거래량(KRW) maker_fee 베이시스 포인트(BPS - 1/100 퍼센트 기준)로 표기된 maker 거래 수수료율 taker_fee 베이시스 포인트(BPS - 1/100 퍼센트 기준)로 표기된 taker 거래 수수료율 로직 주문가/주문량 산출 파라미터/변수 입력 입력값 $b$ 목표 밸런싱비율 $t$ 거래트리거링가격변동포인트 체결된 주문내역 $p_f$ 최근내주문체결가 잔고 조회 $a_i$ 코인보유량 $v_c$ 현금(예수금잔고) env constans (제약조건) $a_m$ 최소주문량 시장 현황 상세정보 bid: 최고 매수호가 현재 매수 주문 중 가장 높은 가격 ask: 최저 매도호가 현재 매도 주문 중 가장 낮은 가격 중간값 $v_e$ 거래직전 평가액 $v_o$ 주문금액 리턴 $p_o$ 주문가 $a_o$ 주문량 로직 매수 목표밸런싱비율 $b$ 는 입력값으로 고정이다 b=ve+vovc−vob = {v_e + v_o \over v_c - v_o}b=vc​−vo​ve​+vo​​ 여기서 vo=ao⋅pov_o = a_o \cdot p_ovo​=ao​⋅po​ ve=ai⋅pov_e = a_i \cdot p_ove​=ai​⋅po​ 따라서 주문량 $a_o$는 ao=b⋅vc−po⋅aipo⋅(1+b)a_o = { b \cdot v_c - p_o \cdot a_i \over p_o \cdot (1 + b) }ao​=po​⋅(1+b)b⋅vc​−po​⋅ai​​ 여기서 주문가 $p_o$는 po=pf⋅(1−t)p_o = p_f \cdot (1 - t)po​=pf​⋅(1−t) 만약 주문량 $a_o$이 최소주문량 $a_m$보다 작다면 ao&amp;lt;ama_o &amp;lt; a_mao​&amp;lt;am​ 주문량 $a_o$를 최소주문량 $a_m$으로 설정한다 ao:=ama_o := a_mao​:=am​ 이 때 주문가 $p_o$는 po=b⋅vcai+am⋅(1+b)p_o = { b \cdot v_c \over a_i + a_m \cdot ( 1 + b ) }po​=ai​+am​⋅(1+b)b⋅vc​​ 매도 목표밸런싱비율 $b$ 는 입력값으로 고정이다 b=ve−vovc+vob = {v_e - v_o \over v_c + v_o}b=vc​+vo​ve​−vo​​ 여기서 vo=ao⋅pov_o = a_o \cdot p_ovo​=ao​⋅po​ ve=ai⋅pov_e = a_i \cdot p_ove​=ai​⋅po​ 따라서 주문량 $a_o$는 ao=po⋅ai−b⋅vcpo⋅(1+b)a_o = { p_o \cdot a_i - b \cdot v_c \over p_o \cdot (1 + b) }ao​=po​⋅(1+b)po​⋅ai​−b⋅vc​​ 여기서 주문가 $p_o$는 po=pf⋅(1+t)p_o = p_f \cdot (1 + t)po​=pf​⋅(1+t) 만약 주문량 $a_o$이 최소주문량 $a_m$보다 작다면 ao&amp;lt;ama_o &amp;lt; a_mao​&amp;lt;am​ 주문량 $a_o$를 최소주문량 $a_m$으로 설정한다 ao:=ama_o := a_mao​:=am​ 이 때 주문가 $p_o$는 po=b⋅vcai−am⋅(1+b)p_o = { b \cdot v_c \over a_i - a_m \cdot ( 1 + b) }po​=ai​−am​⋅(1+b)b⋅vc​​ 로깅 주문 매수주문, 매도주문 호출 성공 후 로깅 주문ID (매수주문, 매도주문) 매도매수구분 (입력값) 주문가 (주문가/주문량 산출 로직 리턴값) 주문량 (주문가/주문량 산출 로직 리턴값) 산출베이스체결ID (체결된 주문내역) 주문가/주문량 산출 로직 입력값 $b$ 목표 밸런싱비율 (입력값) $t$ 거래트리거링가격변동포인트 (입력값) $p_f$ 최근내주문체결가 (체결된 주문내역) $a_i$ 코인보유량 (잔고 조회) $v_c$ 현금(예수금잔고) (잔고 조회) bid: 최고 매수호가 현재 매수 주문 중 가장 높은 가격 (시장 현황 상세정보) ask: 최저 매도호가 현재 매도 주문 중 가장 낮은 가격 (시장 현황 상세정보) last: 최종 체결 가격 (시장 현황 상세정보) 체결 체결된 주문내역 확인 후 로깅 그냥 json 그대로 저장할까? 체결된 주문내역 리턴값 체결ID 매도매수구분 체결시각 수수료 통화: 매수 시 코인, 매도 시 krw 수량 주문ID 체결가 통화 수량 체결량 통화 수량 잔고 조회 리턴값 코인보유량 현금(예수금잔고) Git https://github.com/everlearningemployee/leo.git</summary></entry></feed>
