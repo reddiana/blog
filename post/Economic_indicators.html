@@ -150,7 +150,7 @@ window.onload = wrap_img;
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#구매">구매 </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#미국-ISM-제조업-구매관리자-지수">미국 ISM 제조업 구매관리자 지수 </a></li>
+<li class="toc-entry toc-h2"><a href="#미국-ISM-제조업-구매관리자-지수-(PMI)">미국 ISM 제조업 구매관리자 지수 (PMI) </a></li>
 <li class="toc-entry toc-h2"><a href="#중국-차이신-제조업-구매관리자-지수">중국 차이신 제조업 구매관리자 지수 </a></li>
 </ul>
 </li>
@@ -158,6 +158,11 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#구리-선물">구리 선물 </a></li>
 <li class="toc-entry toc-h3"><a href="#원유">원유 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#소비재">소비재 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#코코아-선물">코코아 선물 </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#고용지표">고용지표 </a>
@@ -185,17 +190,6 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>데이터 출처</p>
-<ul>
-<li><a href="https://www.quandl.com/tools/python">https://www.quandl.com/tools/python</a></li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="구매">
 <a class="anchor" href="#%EA%B5%AC%EB%A7%A4" aria-hidden="true"><span class="octicon octicon-link"></span></a>구매<a class="anchor-link" href="#%EA%B5%AC%EB%A7%A4"> </a>
 </h1>
@@ -205,16 +199,13 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="미국-ISM-제조업-구매관리자-지수">
-<a class="anchor" href="#%EB%AF%B8%EA%B5%AD-ISM-%EC%A0%9C%EC%A1%B0%EC%97%85-%EA%B5%AC%EB%A7%A4%EA%B4%80%EB%A6%AC%EC%9E%90-%EC%A7%80%EC%88%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>미국 ISM 제조업 구매관리자 지수<a class="anchor-link" href="#%EB%AF%B8%EA%B5%AD-ISM-%EC%A0%9C%EC%A1%B0%EC%97%85-%EA%B5%AC%EB%A7%A4%EA%B4%80%EB%A6%AC%EC%9E%90-%EC%A7%80%EC%88%98"> </a>
+<h2 id="미국-ISM-제조업-구매관리자-지수-(PMI)">
+<a class="anchor" href="#%EB%AF%B8%EA%B5%AD-ISM-%EC%A0%9C%EC%A1%B0%EC%97%85-%EA%B5%AC%EB%A7%A4%EA%B4%80%EB%A6%AC%EC%9E%90-%EC%A7%80%EC%88%98-(PMI)" aria-hidden="true"><span class="octicon octicon-link"></span></a>미국 ISM 제조업 구매관리자 지수 (PMI)<a class="anchor-link" href="#%EB%AF%B8%EA%B5%AD-ISM-%EC%A0%9C%EC%A1%B0%EC%97%85-%EA%B5%AC%EB%A7%A4%EA%B4%80%EB%A6%AC%EC%9E%90-%EC%A7%80%EC%88%98-(PMI)"> </a>
 </h2>
 <ul>
-<li>ISM이란: '구매부장님협회' 쯤 </li>
-<li>+: 경기확장</li>
-<li>-: 경기위축 </li>
+<li>ISM이란: '구매부장님협회' 쯤 (<a href="https://www.google.com/search?newwindow=1&amp;sxsrf=ALeKk03yyI9WKgi0etx-fs_1dvTKtMswrA%3A1597932188575&amp;ei=nII-X6PbIreTr7wPsa-9wAg&amp;q=ism+%EC%A0%9C%EC%A1%B0%EC%97%85+%EA%B5%AC%EB%A7%A4%EA%B4%80%EB%A6%AC%EC%9E%90+%EC%A7%80%EC%88%98&amp;oq=ism&amp;gs_lcp=CgZwc3ktYWIQAxgBMgQIIxAnMgQIIxAnMgYIIxAnEBMyAggAMgQIABBDMgIIADICCAAyAggAMgcIABAUEIcCMggIABCxAxCDAToECAAQRzoFCAAQywFQqq0BWNe5AWC3ywFoAXABeACAAYQBiAG5ApIBAzIuMZgBAKABAaoBB2d3cy13aXrAAQE&amp;sclient=psy-ab">구글검색</a>)</li>
+<li>+: 경기확장 / -: 경기위축 </li>
 <li>기준: 50        </li>
-<li>약어: PMI</li>
-<li><a href="https://kr.investing.com/economic-calendar/ism-manufacturing-pmi-173">https://kr.investing.com/economic-calendar/ism-manufacturing-pmi-173</a></li>
 <li>
 <a href="https://youtu.be/w3DHeB62cfA">https://youtu.be/w3DHeB62cfA</a> </li>
 </ul>
@@ -271,13 +262,24 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>데이터/API 출처: <a href="https://www.quandl.com/data/ISM/MAN_PMI-PMI-Composite-Index">https://www.quandl.com/data/ISM/MAN_PMI-PMI-Composite-Index</a> / <a href="https://www.quandl.com/tools/python">https://www.quandl.com/tools/python</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="중국-차이신-제조업-구매관리자-지수">
 <a class="anchor" href="#%EC%A4%91%EA%B5%AD-%EC%B0%A8%EC%9D%B4%EC%8B%A0-%EC%A0%9C%EC%A1%B0%EC%97%85-%EA%B5%AC%EB%A7%A4%EA%B4%80%EB%A6%AC%EC%9E%90-%EC%A7%80%EC%88%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>중국 차이신 제조업 구매관리자 지수<a class="anchor-link" href="#%EC%A4%91%EA%B5%AD-%EC%B0%A8%EC%9D%B4%EC%8B%A0-%EC%A0%9C%EC%A1%B0%EC%97%85-%EA%B5%AC%EB%A7%A4%EA%B4%80%EB%A6%AC%EC%9E%90-%EC%A7%80%EC%88%98"> </a>
 </h2>
 <ul>
-<li>중국 HSBC 제조업 구매관리자지수</li>
+<li>중국 제조업 구매관리자지수</li>
 <li><a href="https://kr.investing.com/economic-calendar/chinese-caixin-manufacturing-pmi-753">https://kr.investing.com/economic-calendar/chinese-caixin-manufacturing-pmi-753</a></li>
-<li>데이터는 돈을 내야함</li>
+<li>유료 데이터</li>
 </ul>
 
 </div>
@@ -299,11 +301,44 @@ window.onload = wrap_img;
 <a class="anchor" href="#%EA%B5%AC%EB%A6%AC-%EC%84%A0%EB%AC%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>구리 선물<a class="anchor-link" href="#%EA%B5%AC%EB%A6%AC-%EC%84%A0%EB%AC%BC"> </a>
 </h3>
 <ul>
-<li><a href="https://kr.investing.com/commodities/copper">https://kr.investing.com/commodities/copper</a></li>
+<li><a href="https://www.mk.co.kr/opinion/contributors/view/2020/07/782882/">구리 박사 vs 코코아 선생, 경기를 보는 두 지표 - 매일경제</a></li>
+<li><a href="https://www.lme.com/Metals/Non-ferrous/Copper#tabIndex=2">런던금속거래소(London Metal Exchange) LME Copper</a></li>
+<li><a href="https://markets.businessinsider.com/commodities/copper-price">https://markets.businessinsider.com/commodities/copper-price</a></li>
+<li>유료 데이터</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="원유">
 <a class="anchor" href="#%EC%9B%90%EC%9C%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>원유<a class="anchor-link" href="#%EC%9B%90%EC%9C%A0"> </a>
 </h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="소비재">
+<a class="anchor" href="#%EC%86%8C%EB%B9%84%EC%9E%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>소비재<a class="anchor-link" href="#%EC%86%8C%EB%B9%84%EC%9E%AC"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="코코아-선물">
+<a class="anchor" href="#%EC%BD%94%EC%BD%94%EC%95%84-%EC%84%A0%EB%AC%BC" aria-hidden="true"><span class="octicon octicon-link"></span></a>코코아 선물<a class="anchor-link" href="#%EC%BD%94%EC%BD%94%EC%95%84-%EC%84%A0%EB%AC%BC"> </a>
+</h3>
+<ul>
+<li><a href="https://www.theice.com/products/7/Cocoa-Futures/data?marketId=5867687&amp;span=2">https://www.theice.com/products/7/Cocoa-Futures/data?marketId=5867687&amp;span=2</a></li>
+<li><a href="https://www.theice.com/marketdata/DelayedMarkets.shtml?getHistoricalChartDataAsJson=&amp;marketId=5867687&amp;historicalSpan=2">https://www.theice.com/marketdata/DelayedMarkets.shtml?getHistoricalChartDataAsJson=&amp;marketId=5867687&amp;historicalSpan=2</a></li>
+</ul>
+
 </div>
 </div>
 </div>
