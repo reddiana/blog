@@ -8,7 +8,9 @@ toc: true
 
 폐쇠망에서 Dockerizing할 때 요긴하게 참고하시라
 
-## Ubuntu Apt Repository
+\[꿀팁\] $HOME에 PVC 마운트하는 경우는 전체 사용자에게 적용되는 설정파일 위치를 사용하면 된다
+
+## Ubuntu APT Repository
 
 설정파일 위치
 - `/etc/apt/sources.list.d/`
