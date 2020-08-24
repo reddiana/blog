@@ -116,6 +116,9 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
+        <a class="category-tags-link" href="/blog/categories/#Package">Package</a>
+        &nbsp;
+      
         <a class="category-tags-link" href="/blog/categories/#PyPI">PyPI</a>
         &nbsp;
       
@@ -128,6 +131,9 @@ window.onload = wrap_img;
         <a class="category-tags-link" href="/blog/categories/#Dockerfile">Dockerfile</a>
         &nbsp;
       
+        <a class="category-tags-link" href="/blog/categories/#Ubuntu">Ubuntu</a>
+        &nbsp;
+      
         <a class="category-tags-link" href="/blog/categories/#폐쇠망">폐쇠망</a>
         
       
@@ -138,50 +144,25 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#ubuntu-apt-repository">Ubuntu Apt Repository</a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#설정파일-위치">설정파일 위치</a></li>
-<li class="toc-entry toc-h4"><a href="#설정파일-샘플">설정파일 샘플</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#pypi-repository">PyPI Repository</a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#설정파일-위치-1">설정파일 위치</a></li>
-<li class="toc-entry toc-h4"><a href="#설정파일-샘플-1">설정파일 샘플</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#npm-registry">npm Registry</a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#설정파일-위치-2">설정파일 위치</a></li>
-<li class="toc-entry toc-h4"><a href="#설정파일-샘플-2">설정파일 샘플</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#yarn-registry">yarn Registry</a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#설정파일-샘플-3">설정파일 샘플</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#기타1-docker-registry">기타1) Docker Registry</a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#설정파일-위치-3">설정파일 위치</a></li>
-<li class="toc-entry toc-h4"><a href="#설정파일-샘플-4">설정파일 샘플</a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#ubuntu-apt-repository">Ubuntu APT Repository</a></li>
+<li class="toc-entry toc-h2"><a href="#pypi-repository">PyPI Repository</a></li>
+<li class="toc-entry toc-h2"><a href="#npm-registry">npm Registry</a></li>
+<li class="toc-entry toc-h2"><a href="#yarn-registry">yarn Registry</a></li>
+<li class="toc-entry toc-h2"><a href="#기타1-docker-registry">기타1) Docker Registry</a></li>
 <li class="toc-entry toc-h2"><a href="#기타2-bashrc">기타2) .bashrc</a></li>
 </ul><p>폐쇠망에서 Dockerizing할 때 요긴하게 참고하시라</p>
 
+<p>[꿀팁] $HOME에 PVC 마운트하는 경우는 전체 사용자에게 적용되는 설정파일 위치를 사용하면 된다</p>
+
 <h2 id="ubuntu-apt-repository">
-<a class="anchor" href="#ubuntu-apt-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ubuntu Apt Repository</h2>
+<a class="anchor" href="#ubuntu-apt-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ubuntu APT Repository</h2>
 
-<h4 id="설정파일-위치">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%9C%84%EC%B9%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 위치</h4>
-
+<p>설정파일 위치</p>
 <ul>
   <li><code class="highlighter-rouge">/etc/apt/sources.list.d/</code></li>
 </ul>
 
-<h4 id="설정파일-샘플">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%83%98%ED%94%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 샘플</h4>
+<p>설정파일 샘플</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># source.list</span>
 deb http://ubuntu.mirror.xxx.net/ubuntu bionic main restricted
@@ -199,9 +180,7 @@ deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security multiverse
 <h2 id="pypi-repository">
 <a class="anchor" href="#pypi-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>PyPI Repository</h2>
 
-<h4 id="설정파일-위치-1">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%9C%84%EC%B9%98-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 위치</h4>
-
+<p>설정파일 위치</p>
 <ul>
   <li>https://pip.pypa.io/en/stable/user_guide/#config-file</li>
   <li>전체 사용자: <code class="highlighter-rouge">/etc/pip.conf</code>
@@ -216,8 +195,7 @@ deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security multiverse
   </li>
 </ul>
 
-<h4 id="설정파일-샘플-1">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%83%98%ED%94%8C-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 샘플</h4>
+<p>설정파일 샘플</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[global]
 index-url = http://nexus.xxx.com/repository/pypi-remote/simple/
@@ -227,8 +205,7 @@ trusted-host = nexus.xxx.com
 <h2 id="npm-registry">
 <a class="anchor" href="#npm-registry" aria-hidden="true"><span class="octicon octicon-link"></span></a>npm Registry</h2>
 
-<h4 id="설정파일-위치-2">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%9C%84%EC%B9%98-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 위치</h4>
+<p>설정파일 위치</p>
 
 <ul>
   <li>전체 사용자: <code class="highlighter-rouge">/usr/etc/npmrc</code>
@@ -237,14 +214,15 @@ trusted-host = nexus.xxx.com
 </li>
 </ul>
 
-<h4 id="설정파일-샘플-2">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%83%98%ED%94%8C-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 샘플</h4>
+<p>설정파일 샘플</p>
 
 <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">registry</span><span class="p">=</span><span class="s">http://nexus.xxx.net/repository/itp-npm/</span>
 </code></pre></div></div>
 
 <h2 id="yarn-registry">
 <a class="anchor" href="#yarn-registry" aria-hidden="true"><span class="octicon octicon-link"></span></a>yarn Registry</h2>
+
+<p>설정파일 위치</p>
 
 <ul>
   <li>전체 사용자: <code class="highlighter-rouge">/usr/etc/yarnrc</code>
@@ -253,8 +231,7 @@ trusted-host = nexus.xxx.com
 </li>
 </ul>
 
-<h4 id="설정파일-샘플-3">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%83%98%ED%94%8C-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 샘플</h4>
+<p>설정파일 샘플</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>registry "http://nexus.xxx.net:8081/artifactory/api/npm/npm"
 </code></pre></div></div>
@@ -262,8 +239,7 @@ trusted-host = nexus.xxx.com
 <h2 id="기타1-docker-registry">
 <a class="anchor" href="#%EA%B8%B0%ED%83%801-docker-registry" aria-hidden="true"><span class="octicon octicon-link"></span></a>기타1) Docker Registry</h2>
 
-<h4 id="설정파일-위치-3">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%9C%84%EC%B9%98-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 위치</h4>
+<p>설정파일 위치</p>
 
 <ul>
   <li><code class="highlighter-rouge">${DOCKER_CONFIG}/config.json</code></li>
@@ -272,8 +248,7 @@ trusted-host = nexus.xxx.com
   <li>전체 사용자 적용 위치는 없음</li>
 </ul>
 
-<h4 id="설정파일-샘플-4">
-<a class="anchor" href="#%EC%84%A4%EC%A0%95%ED%8C%8C%EC%9D%BC-%EC%83%98%ED%94%8C-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>설정파일 샘플</h4>
+<p>설정파일 샘플</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
        </span><span class="nl">"auths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -289,6 +264,8 @@ trusted-host = nexus.xxx.com
 
 <h2 id="기타2-bashrc">
 <a class="anchor" href="#%EA%B8%B0%ED%83%802-bashrc" aria-hidden="true"><span class="octicon octicon-link"></span></a>기타2) .bashrc</h2>
+
+<p>설정파일 위치</p>
 
 <ul>
   <li>전체 사용자:

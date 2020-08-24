@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-24T10:22:25-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">패키지관리자 설정파일 위치</title><link href="https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location.html" rel="alternate" type="text/html" title="패키지관리자 설정파일 위치" /><published>2020-08-25T00:00:00-05:00</published><updated>2020-08-25T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location.html">&lt;p&gt;폐쇠망에서 Dockerizing할 때 요긴하게 참고하시라&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-24T11:29:53-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">패키지관리자 설정파일 위치</title><link href="https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location.html" rel="alternate" type="text/html" title="패키지관리자 설정파일 위치" /><published>2020-08-25T00:00:00-05:00</published><updated>2020-08-25T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location.html">&lt;p&gt;폐쇠망에서 Dockerizing할 때 요긴하게 참고하시라&lt;/p&gt;
 
-&lt;h2 id=&quot;ubuntu-apt-repository&quot;&gt;Ubuntu Apt Repository&lt;/h2&gt;
+&lt;p&gt;[꿀팁] $HOME에 PVC 마운트하는 경우는 전체 사용자에게 적용되는 설정파일 위치를 사용하면 된다&lt;/p&gt;
 
-&lt;h4 id=&quot;설정파일-위치&quot;&gt;설정파일 위치&lt;/h4&gt;
+&lt;h2 id=&quot;ubuntu-apt-repository&quot;&gt;Ubuntu APT Repository&lt;/h2&gt;
 
+&lt;p&gt;설정파일 위치&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/apt/sources.list.d/&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;설정파일-샘플&quot;&gt;설정파일 샘플&lt;/h4&gt;
+&lt;p&gt;설정파일 샘플&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# source.list&lt;/span&gt;
 deb http://ubuntu.mirror.xxx.net/ubuntu bionic main restricted
@@ -25,8 +26,7 @@ deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security multiverse
 
 &lt;h2 id=&quot;pypi-repository&quot;&gt;PyPI Repository&lt;/h2&gt;
 
-&lt;h4 id=&quot;설정파일-위치-1&quot;&gt;설정파일 위치&lt;/h4&gt;
-
+&lt;p&gt;설정파일 위치&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;https://pip.pypa.io/en/stable/user_guide/#config-file&lt;/li&gt;
   &lt;li&gt;전체 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/pip.conf&lt;/code&gt;&lt;/li&gt;
@@ -38,7 +38,7 @@ deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security multiverse
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;설정파일-샘플-1&quot;&gt;설정파일 샘플&lt;/h4&gt;
+&lt;p&gt;설정파일 샘플&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[global]
 index-url = http://nexus.xxx.com/repository/pypi-remote/simple/
@@ -47,33 +47,35 @@ trusted-host = nexus.xxx.com
 
 &lt;h2 id=&quot;npm-registry&quot;&gt;npm Registry&lt;/h2&gt;
 
-&lt;h4 id=&quot;설정파일-위치-2&quot;&gt;설정파일 위치&lt;/h4&gt;
+&lt;p&gt;설정파일 위치&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;전체 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/etc/npmrc&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;개별 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.npmrc&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;설정파일-샘플-2&quot;&gt;설정파일 샘플&lt;/h4&gt;
+&lt;p&gt;설정파일 샘플&lt;/p&gt;
 
 &lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;py&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://nexus.xxx.net/repository/itp-npm/&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;yarn-registry&quot;&gt;yarn Registry&lt;/h2&gt;
 
+&lt;p&gt;설정파일 위치&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;전체 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/etc/yarnrc&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;개별 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.yarnrc&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;설정파일-샘플-3&quot;&gt;설정파일 샘플&lt;/h4&gt;
+&lt;p&gt;설정파일 샘플&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;registry &quot;http://nexus.xxx.net:8081/artifactory/api/npm/npm&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;기타1-docker-registry&quot;&gt;기타1) Docker Registry&lt;/h2&gt;
 
-&lt;h4 id=&quot;설정파일-위치-3&quot;&gt;설정파일 위치&lt;/h4&gt;
+&lt;p&gt;설정파일 위치&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;${DOCKER_CONFIG}/config.json&lt;/code&gt;&lt;/li&gt;
@@ -81,7 +83,7 @@ trusted-host = nexus.xxx.com
   &lt;li&gt;전체 사용자 적용 위치는 없음&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;설정파일-샘플-4&quot;&gt;설정파일 샘플&lt;/h4&gt;
+&lt;p&gt;설정파일 샘플&lt;/p&gt;
 
 &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;auths&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
@@ -96,6 +98,8 @@ trusted-host = nexus.xxx.com
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;기타2-bashrc&quot;&gt;기타2) .bashrc&lt;/h2&gt;
+
+&lt;p&gt;설정파일 위치&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;전체 사용자:
