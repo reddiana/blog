@@ -2,7 +2,7 @@
 title: 패키지관리자 설정파일 위치
 description: 지금 알고 있는 걸 그때도 알았더라면
 layout: post
-categories: [PyPI, npm, yarn, Dockerfile, 폐쇠망]
+categories: [Package, PyPI, npm, yarn, Dockerfile, Ubuntu, 폐쇠망]
 toc: true
 ---
 
@@ -10,11 +10,10 @@ toc: true
 
 ## Ubuntu Apt Repository
 
-#### 설정파일 위치
-
+설정파일 위치
 - `/etc/apt/sources.list.d/`
 
-#### 설정파일 샘플
+설정파일 샘플
 
 ```bash
 # source.list
@@ -32,15 +31,14 @@ deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security multiverse
 
 ## PyPI Repository
 
-#### 설정파일 위치
-
+설정파일 위치
 - https://pip.pypa.io/en/stable/user_guide/#config-file
 - 전체 사용자: `/etc/pip.conf`
 - 개별 사용자:
   - Unix/MacOS: `${HOME}/.pip/pip.conf `
   - Windows: `%HOME%\pip\pip.ini`
 
-#### 설정파일 샘플
+설정파일 샘플
 
 ```
 [global]
@@ -50,12 +48,12 @@ trusted-host = nexus.xxx.com
 
 ## npm Registry
 
-#### 설정파일 위치
+설정파일 위치
 
 - 전체 사용자: `/usr/etc/npmrc`
 - 개별 사용자: `~/.npmrc`
 
-#### 설정파일 샘플
+설정파일 샘플
 
 ```ini
 registry=http://nexus.xxx.net/repository/itp-npm/
@@ -63,10 +61,12 @@ registry=http://nexus.xxx.net/repository/itp-npm/
 
 ## yarn Registry
 
+설정파일 위치
+
 - 전체 사용자: `/usr/etc/yarnrc`
 - 개별 사용자: `~/.yarnrc`
 
-#### 설정파일 샘플
+설정파일 샘플
 
 ```
 registry "http://nexus.xxx.net:8081/artifactory/api/npm/npm"
@@ -74,13 +74,13 @@ registry "http://nexus.xxx.net:8081/artifactory/api/npm/npm"
 
 ## 기타1) Docker Registry
 
-#### 설정파일 위치
+설정파일 위치
 
 - `${DOCKER_CONFIG}/config.json`
 - 일반적으로  `~/config.json`
 - 전체 사용자 적용 위치는 없음
 
-#### 설정파일 샘플
+설정파일 샘플
 
 ```json
 {
@@ -96,6 +96,8 @@ registry "http://nexus.xxx.net:8081/artifactory/api/npm/npm"
 ```
 
 ## 기타2) .bashrc
+
+설정파일 위치
 
 - 전체 사용자:
   - Debian-based Linux: `/etc/bash.bashrc`
