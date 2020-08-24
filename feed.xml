@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-23T09:39:02-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">SQL vs. Pandas</title><link href="https://everlearningemployee.github.io/blog/post/SQL_vs_pandas.html" rel="alternate" type="text/html" title="SQL vs. Pandas" /><published>2020-08-23T00:00:00-05:00</published><updated>2020-08-23T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/SQL_vs_pandas</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/SQL_vs_pandas.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-08-24T10:22:25-05:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">패키지관리자 설정파일 위치</title><link href="https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location.html" rel="alternate" type="text/html" title="패키지관리자 설정파일 위치" /><published>2020-08-25T00:00:00-05:00</published><updated>2020-08-25T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/package_manager_configuration_file_location.html">&lt;p&gt;폐쇠망에서 Dockerizing할 때 요긴하게 참고하시라&lt;/p&gt;
+
+&lt;h2 id=&quot;ubuntu-apt-repository&quot;&gt;Ubuntu Apt Repository&lt;/h2&gt;
+
+&lt;h4 id=&quot;설정파일-위치&quot;&gt;설정파일 위치&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/apt/sources.list.d/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;설정파일-샘플&quot;&gt;설정파일 샘플&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# source.list&lt;/span&gt;
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic main restricted
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic-updates main restricted
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic universe
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic-updates universe
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic multiverse
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic-updates multiverse
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic-backports main restricted universe multiverse
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security main restricted
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security universe
+deb http://ubuntu.mirror.xxx.net/ubuntu bionic-security multiverse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;pypi-repository&quot;&gt;PyPI Repository&lt;/h2&gt;
+
+&lt;h4 id=&quot;설정파일-위치-1&quot;&gt;설정파일 위치&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://pip.pypa.io/en/stable/user_guide/#config-file&lt;/li&gt;
+  &lt;li&gt;전체 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/pip.conf&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;개별 사용자:
+    &lt;ul&gt;
+      &lt;li&gt;Unix/MacOS: &lt;code class=&quot;highlighter-rouge&quot;&gt;${HOME}/.pip/pip.conf &lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Windows: &lt;code class=&quot;highlighter-rouge&quot;&gt;%HOME%\pip\pip.ini&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;설정파일-샘플-1&quot;&gt;설정파일 샘플&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[global]
+index-url = http://nexus.xxx.com/repository/pypi-remote/simple/
+trusted-host = nexus.xxx.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;npm-registry&quot;&gt;npm Registry&lt;/h2&gt;
+
+&lt;h4 id=&quot;설정파일-위치-2&quot;&gt;설정파일 위치&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전체 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/etc/npmrc&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;개별 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.npmrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;설정파일-샘플-2&quot;&gt;설정파일 샘플&lt;/h4&gt;
+
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;py&quot;&gt;registry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;http://nexus.xxx.net/repository/itp-npm/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;yarn-registry&quot;&gt;yarn Registry&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전체 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/etc/yarnrc&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;개별 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.yarnrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;설정파일-샘플-3&quot;&gt;설정파일 샘플&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;registry &quot;http://nexus.xxx.net:8081/artifactory/api/npm/npm&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;기타1-docker-registry&quot;&gt;기타1) Docker Registry&lt;/h2&gt;
+
+&lt;h4 id=&quot;설정파일-위치-3&quot;&gt;설정파일 위치&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;${DOCKER_CONFIG}/config.json&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;일반적으로  &lt;code class=&quot;highlighter-rouge&quot;&gt;~/config.json&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;전체 사용자 적용 위치는 없음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;설정파일-샘플-4&quot;&gt;설정파일 샘플&lt;/h4&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+       &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;auths&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;yyy.xxx.net&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;auth&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;THisISASaMplECOnFIgfilEWow==&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;HttpHeaders&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+                &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;User-Agent&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Docker-Client/19.03.5 (linux)&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;기타2-bashrc&quot;&gt;기타2) .bashrc&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전체 사용자:
+    &lt;ul&gt;
+      &lt;li&gt;Debian-based Linux: &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/bash.bashrc&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Redhat, Fedora: &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/bashrc&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Suse, OpenSuse,: &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/bash.bashrc.local&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개별 사용자: &lt;code class=&quot;highlighter-rouge&quot;&gt;~/. bashrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">폐쇠망에서 Dockerizing할 때 요긴하게 참고하시라</summary></entry><entry><title type="html">SQL vs. Pandas</title><link href="https://everlearningemployee.github.io/blog/post/SQL_vs_pandas.html" rel="alternate" type="text/html" title="SQL vs. Pandas" /><published>2020-08-23T00:00:00-05:00</published><updated>2020-08-23T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/SQL_vs_pandas</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/SQL_vs_pandas.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -7761,15 +7869,7 @@ saved_model.pb
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html&quot;&gt;https://docs.seldon.io/projects/seldon-core/en/stable/graph/inference-graph.html&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale&quot;&gt;https://www.slideshare.net/seldon_io/seldon-deploying-models-at-scale&lt;/a&gt; (p28)&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">KFServing이란</summary></entry><entry><title type="html">Ubuntu에 Docker 설치</title><link href="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html" rel="alternate" type="text/html" title="Ubuntu에 Docker 설치" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html">&lt;p&gt;출처: &lt;a href=&quot;https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04&quot;&gt;How To Install Docker On Ubuntu 18.04 Bionic Beaver&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get remove docker docker-engine docker.io
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;docker.io
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start docker
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;docker
-&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; docker &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver</summary></entry><entry><title type="html">Git Authentication</title><link href="https://everlearningemployee.github.io/blog/post/git-authentication.html" rel="alternate" type="text/html" title="Git Authentication" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/git-authentication</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/git-authentication.html">&lt;ul&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">KFServing이란</summary></entry><entry><title type="html">Git Authentication</title><link href="https://everlearningemployee.github.io/blog/post/git-authentication.html" rel="alternate" type="text/html" title="Git Authentication" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/git-authentication</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/git-authentication.html">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://medium.com/@ginnyfahs/github-error-authentication-failed-from-command-line-3a545bfd0ca8&quot;&gt;GitHub Error: Authentication Failed from the Command Line&lt;/a&gt;&lt;/p&gt;
 
@@ -7783,7 +7883,15 @@ saved_model.pb
     &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config credential.helper store
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">GitHub Error: Authentication Failed from the Command Line 사용자 Settings &amp;gt; Developer settings &amp;gt; Personal access tokens Git pull/push 시 Password 물어보지 않도록 설정하기(credential.helper) git config credential.helper store</summary></entry><entry><title type="html">Kafka를 공부해보자</title><link href="https://everlearningemployee.github.io/blog/post/hello-kafka.html" rel="alternate" type="text/html" title="Kafka를 공부해보자" /><published>2020-03-12T00:00:00-05:00</published><updated>2020-03-12T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/hello-kafka</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/hello-kafka.html">&lt;p&gt;&lt;img src=&quot;Kafka.assets/download.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">GitHub Error: Authentication Failed from the Command Line 사용자 Settings &amp;gt; Developer settings &amp;gt; Personal access tokens Git pull/push 시 Password 물어보지 않도록 설정하기(credential.helper) git config credential.helper store</summary></entry><entry><title type="html">Ubuntu에 Docker 설치</title><link href="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html" rel="alternate" type="text/html" title="Ubuntu에 Docker 설치" /><published>2020-03-14T00:00:00-05:00</published><updated>2020-03-14T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html">&lt;p&gt;출처: &lt;a href=&quot;https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04&quot;&gt;How To Install Docker On Ubuntu 18.04 Bionic Beaver&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get remove docker docker-engine docker.io
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;docker.io
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start docker
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;docker
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; docker &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver</summary></entry><entry><title type="html">Kafka를 공부해보자</title><link href="https://everlearningemployee.github.io/blog/post/hello-kafka.html" rel="alternate" type="text/html" title="Kafka를 공부해보자" /><published>2020-03-12T00:00:00-05:00</published><updated>2020-03-12T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/hello-kafka</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/hello-kafka.html">&lt;p&gt;&lt;img src=&quot;Kafka.assets/download.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;prestop-hook&quot;&gt;PreStop Hook&lt;/h1&gt;
 
@@ -8154,44 +8262,4 @@ kafka-console-consumer &lt;span class=&quot;nt&quot;&gt;--bootstrap-server&lt;/s
 
 &lt;h3 id=&quot;python-how-to-use-pytest--mock--fixture&quot;&gt;&lt;a href=&quot;https://code13.tistory.com/256&quot;&gt;[Python] how to use pytest &amp;amp; mock &amp;amp; fixture&lt;/a&gt;&lt;/h3&gt;
 
-&lt;h3 id=&quot;unittest-vs-pytest&quot;&gt;&lt;a href=&quot;https://www.bangseongbeom.com/unittest-vs-pytest.html&quot;&gt;unittest vs pytest&lt;/a&gt;&lt;/h3&gt;</content><author><name></name></author><summary type="html">Python TDD</summary></entry><entry><title type="html">Uncaught Exception Trace</title><link href="https://everlearningemployee.github.io/blog/post/uncaughtExceptionTrace.html" rel="alternate" type="text/html" title="Uncaught Exception Trace" /><published>2020-03-08T00:00:00-06:00</published><updated>2020-03-08T00:00:00-06:00</updated><id>https://everlearningemployee.github.io/blog/post/uncaughtExceptionTrace</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/uncaughtExceptionTrace.html">&lt;h1 id=&quot;uncaught-exception-trace&quot;&gt;Uncaught Exception Trace&lt;/h1&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;traceback&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;exception_hook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Type: {type}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Value: {value}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;traceback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format_exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rstrip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;logging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;excepthook&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exception_hook&lt;/span&gt;
-
-&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;https://gist.github.com/everlearningemployee/1746cd89615dfebed068345f5505d525&quot;&gt;전체 샘플 코드&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;익셉션 트레이스가 로그에 이렇게 찍힌다&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-less&quot;&gt;2020-03-08 17:51:52 ERROR ================================================================================
-2020-03-08 17:51:52 ERROR Type: &amp;lt;class 'IndexError'&amp;gt;
-2020-03-08 17:51:52 ERROR Value: tuple index out of range
-2020-03-08 17:51:52 ERROR Traceback (most recent call last):
-2020-03-08 17:51:52 ERROR   File &quot;d:/temp/uncaughtExceptionTrace.py&quot;, line 59, in &amp;lt;module&amp;gt;
-2020-03-08 17:51:52 ERROR     lumberjack()
-2020-03-08 17:51:52 ERROR   File &quot;d:/temp/uncaughtExceptionTrace.py&quot;, line 52, in lumberjack
-2020-03-08 17:51:52 ERROR     bright_side_of_death()
-2020-03-08 17:51:52 ERROR   File &quot;d:/temp/uncaughtExceptionTrace.py&quot;, line 56, in bright_side_of_death
-2020-03-08 17:51:52 ERROR     return tuple()[0]
-2020-03-08 17:51:52 ERROR IndexError: tuple index out of range
-2020-03-08 17:51:52 ERROR --------------------------------------------------------------------------------
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://dev.to/joshuaschlichting/catching-every-single-exception-with-python-40o3&quot;&gt;Catching every single exception with Python&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/ko/3/tutorial/errors.html#errors-and-exceptions&quot;&gt;파이썬 공식 자습서 - 8. 에러와 예외&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://code.tutsplus.com/ko/tutorials/professional-error-handling-with-python--cms-25950&quot;&gt;파이썬을 이용한 전문적인 오류 처리&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">Uncaught Exception Trace import sys import traceback def exception_hook(type, value, tb): logging.error('=' * 80) logging.error(f'Type: {type}') logging.error(f'Value: {value}') t = traceback.format_exception(type, value, tb) t = [i.rstrip().split('\n') for i in t] for i in sum(t, []): logging.error(i) logging.error('-' * 80) sys.excepthook = exception_hook 1 / 0 전체 샘플 코드 익셉션 트레이스가 로그에 이렇게 찍힌다 2020-03-08 17:51:52 ERROR ================================================================================ 2020-03-08 17:51:52 ERROR Type: &amp;lt;class 'IndexError'&amp;gt; 2020-03-08 17:51:52 ERROR Value: tuple index out of range 2020-03-08 17:51:52 ERROR Traceback (most recent call last): 2020-03-08 17:51:52 ERROR File &quot;d:/temp/uncaughtExceptionTrace.py&quot;, line 59, in &amp;lt;module&amp;gt; 2020-03-08 17:51:52 ERROR lumberjack() 2020-03-08 17:51:52 ERROR File &quot;d:/temp/uncaughtExceptionTrace.py&quot;, line 52, in lumberjack 2020-03-08 17:51:52 ERROR bright_side_of_death() 2020-03-08 17:51:52 ERROR File &quot;d:/temp/uncaughtExceptionTrace.py&quot;, line 56, in bright_side_of_death 2020-03-08 17:51:52 ERROR return tuple()[0] 2020-03-08 17:51:52 ERROR IndexError: tuple index out of range 2020-03-08 17:51:52 ERROR -------------------------------------------------------------------------------- Catching every single exception with Python 파이썬 공식 자습서 - 8. 에러와 예외 파이썬을 이용한 전문적인 오류 처리</summary></entry></feed>
+&lt;h3 id=&quot;unittest-vs-pytest&quot;&gt;&lt;a href=&quot;https://www.bangseongbeom.com/unittest-vs-pytest.html&quot;&gt;unittest vs pytest&lt;/a&gt;&lt;/h3&gt;</content><author><name></name></author><summary type="html">Python TDD</summary></entry></feed>
