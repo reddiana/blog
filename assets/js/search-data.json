@@ -91,7 +91,7 @@
     
         ,"post8": {
             "title": "Ubuntu에 Docker 설치",
-            "content": "출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver . sudo apt-get update sudo apt-get remove docker docker-engine docker.io sudo apt install docker.io sudo systemctl start docker sudo systemctl enable docker sudo usermod -aG docker $USER .",
+            "content": "출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver . sudo apt-get update sudo apt-get remove docker docker-engine docker.io sudo apt install -y docker.io sudo systemctl start docker sudo systemctl enable docker sudo usermod -aG docker $USER .",
             "url": "https://everlearningemployee.github.io/blog/post/docker-install-on-ubuntu.html",
             "relUrl": "/post/docker-install-on-ubuntu.html",
             "date": " • Mar 14, 2020"
