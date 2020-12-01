@@ -58,7 +58,7 @@ trusted-host = nexus.xxx.com
 설정파일 샘플
 
 ```ini
-registry=http://nexus.xxx.net/repository/itp-npm/
+registry=http://nexus.xxx.net/repository/npm/
 ```
 
 ## yarn Registry
@@ -105,4 +105,4 @@ registry "http://nexus.xxx.net:8081/artifactory/api/npm/npm"
   - Debian-based Linux: `/etc/bash.bashrc`
   - Redhat, Fedora: `/etc/bashrc`
   - Suse, OpenSuse,: `/etc/bash.bashrc.local`
-- 개별 사용자: `~/. bashrc`
+- 개별 사용자: `~/.bashrc`
