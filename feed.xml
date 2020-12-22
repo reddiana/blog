@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-12-20T17:11:12-06:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">KRX 데이터 조회 - 전일급등주</title><link href="https://everlearningemployee.github.io/blog/post/Soared_Stocks.html" rel="alternate" type="text/html" title="KRX 데이터 조회 - 전일급등주" /><published>2020-10-25T00:00:00-05:00</published><updated>2020-10-25T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/Soared_Stocks</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/Soared_Stocks.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2020-12-22T07:56:43-06:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">CANONICAL Multipass</title><link href="https://everlearningemployee.github.io/blog/post/canonical_multipass.html" rel="alternate" type="text/html" title="CANONICAL Multipass" /><published>2020-12-22T00:00:00-06:00</published><updated>2020-12-22T00:00:00-06:00</updated><id>https://everlearningemployee.github.io/blog/post/canonical_multipass</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/canonical_multipass.html">&lt;h2 id=&quot;canonical-multipass&quot;&gt;CANONICAL Multipass&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://multipass.run/&quot;&gt;Multipass orchestrates virtual Ubuntu instances&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[&lt;a href=&quot;https://ddochea.tistory.com/68&quot;&gt;Ubuntu] multipass를 이용한 우분투 서버 가상환경 구축 :: 또치의 삽질 보관함 (tistory.com)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ssh-client로-접속&quot;&gt;SSH Client로 접속&lt;/h2&gt;
+
+&lt;p&gt;계정/비전으로는 접속이 안된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;id_rsa.pub&lt;/code&gt; 내용을 &lt;code class=&quot;highlighter-rouge&quot;&gt;authorized_keys&lt;/code&gt; 파일에 추가하고 인증서로 로그인하자&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.ssh/authorized_keys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;static-ip-설정&quot;&gt;Static IP 설정&lt;/h2&gt;
+
+&lt;p&gt;vm이 dhcp를 써서 ssh client로 접속할 때 무진장 귀찮다.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;MY_IP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;ip a | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/inet.*eth0/{print $2}'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;MY_GW&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;ip r | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/default/{print $3}'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;MY_MAC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;ip a show dev eth0 | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/link\/eth/{print $2}'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt; &amp;gt; /etc/netplan/50-cloud-init.yaml
+network:
+ version: 2
+ renderer: networkd
+ ethernets:
+   enp0s8:
+     dhcp4: no
+     addresses: [&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MY_IP&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;]
+     gateway4: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MY_GW&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
+     nameservers:
+       addresses: 
+         - 8.8.8.8
+         - 8.8.4.4
+#         - 70.10.98.4
+#         - 203.241.132.34
+#         - 203.241.132.85
+#         - 203.241.135.130
+#         - 203.241.135.135         
+     match:
+       macaddress: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MY_MAC&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF
+&lt;/span&gt;netplan apply
+&lt;span class=&quot;c&quot;&gt;# curl www.google.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;multipass-cmd-windows-alias-설정&quot;&gt;multipass cmd Windows alias 설정&lt;/h2&gt;
+
+&lt;h4 id=&quot;doskey&quot;&gt;doskey&lt;/h4&gt;
+
+&lt;p&gt;multipass라는 명령이 은근히 매번 타이핑 귀찮다. Windows에도 &lt;code class=&quot;highlighter-rouge&quot;&gt;doskey&lt;/code&gt;라는 alias 명령어가 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;alias.cmd&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-cmd&quot;&gt;@echo off
+
+doskey m       = multipass $*
+:: commands
+doskey alias   = doskey $*
+doskey cat     = type $*
+doskey clear   = cls
+doskey grep    = find $*
+doskey history = doskey /history
+doskey man     = help $*
+::
+doskey kill    = taskkill /PID $*
+doskey ls      = dir $*
+doskey ll      = dir $*
+::
+doskey cp      = copy $*
+doskey cpr     = xcopy $*
+doskey mv      = move $*
+doskey rm      = del $*
+doskey rmr     = deltree $*
+::
+doskey ps      = tasklist $*
+doskey pwd     = cd
+::
+doskey sudo    = runas /user:administrator $*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;시작-시-doskey-적용-reg&quot;&gt;시작 시 doskey 적용 .reg&lt;/h4&gt;
+
+&lt;p&gt;위 alias.cmd를 레지스트리에 등록하여 도스창 열릴 때 마다 적용 시킨다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/20530996/aliases-in-windows-command-prompt&quot;&gt;alias - Aliases in Windows command prompt - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;alias_auto_set.reg&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Command Processor]
+&quot;AutoRun&quot;=&quot;%USERPROFILE%\\alias.cmd&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">CANONICAL Multipass</summary></entry><entry><title type="html">KRX 데이터 조회 - 전일급등주</title><link href="https://everlearningemployee.github.io/blog/post/Soared_Stocks.html" rel="alternate" type="text/html" title="KRX 데이터 조회 - 전일급등주" /><published>2020-10-25T00:00:00-05:00</published><updated>2020-10-25T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/Soared_Stocks</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/Soared_Stocks.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -8539,326 +8640,4 @@ saved_model.pb
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start docker
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;docker
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;usermod &lt;span class=&quot;nt&quot;&gt;-aG&lt;/span&gt; docker &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver</summary></entry><entry><title type="html">Kafka를 공부해보자</title><link href="https://everlearningemployee.github.io/blog/post/hello-kafka.html" rel="alternate" type="text/html" title="Kafka를 공부해보자" /><published>2020-03-12T00:00:00-05:00</published><updated>2020-03-12T00:00:00-05:00</updated><id>https://everlearningemployee.github.io/blog/post/hello-kafka</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/hello-kafka.html">&lt;p&gt;&lt;img src=&quot;Kafka.assets/download.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;prestop-hook&quot;&gt;PreStop Hook&lt;/h1&gt;
-
-&lt;p&gt;구현 필요&lt;/p&gt;
-
-&lt;h1 id=&quot;consumer-group--partition&quot;&gt;Consumer Group / Partition&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;ved=2ahUKEwis4s_no6zlAhUKvZQKHXC1ClQQFjAAegQIARAB&amp;amp;url=http%3A%2F%2Fwww.popit.kr%2Fkafka-consumer-group%2F&amp;amp;usg=AOvVaw2eqTWdayB-QZk7ez_CRru-&quot;&gt;Kafka 운영자가 말하는 Kafka Consumer Group&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;컨슈머 그룹 별로 각각 offset이 유지됨&lt;/li&gt;
-      &lt;li&gt;한 번 늘린 Partition은 줄일 수 없음&lt;/li&gt;
-      &lt;li&gt;갯수(Partition) &amp;gt; 갯수(Consumer):
-        &lt;ul&gt;
-          &lt;li&gt;어쨌든 일 함. 특정  Consumer로 일이 쏠림&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;갯수(Partition) &amp;lt; 갯수(Consumer)
-        &lt;ul&gt;
-          &lt;li&gt;노는 Consumr 생심. 이런 상황 절대 허용할 수 없음
-            &lt;h4 id=&quot;ml-적용-전략&quot;&gt;ML 적용 전략&lt;/h4&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;K8s에 ML Logic Consumer Pod가 배포됐다고 치자&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Consumer Group은 &lt;strong&gt;업무별로 1개&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;중복 처리 X이므로 여러 Consumer들이 Offset을 공유해야함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;갯수(Parition)과 갯수(Cousumer ) 매핑&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;partition은 consumming 과정이 동기인 듯&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;추정의 이유:
-            &lt;ul&gt;
-              &lt;li&gt;1개의 consumer는 1개 이상의 partition에 붙을 수 있으나&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;1개의 partition은 1개의 consumer만 담당&lt;/li&gt;
-          &lt;li&gt;무조건 &lt;strong&gt;갯수(Partition) &amp;gt;= 갯수(Consumer)&lt;/strong&gt;로 구성 필요&lt;/li&gt;
-          &lt;li&gt;ML컨수머는 &lt;strong&gt;롱트랜잭션&lt;/strong&gt;이므로&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;1안) 갯수(Partition) = 갯수(Consumer): 1대 1로 갯수를 맞춤&lt;/strong&gt;&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;Consumer Pod를 &lt;strong&gt;Scaling 하지 않음&lt;/strong&gt; (Min == Max)
-            &lt;ul&gt;
-              &lt;li&gt;장점: 확실&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;단점: Pod 리소스 점유 아까워&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;2안) 갯수(Partition) = Max(갯수(Consumer))
-        &lt;ul&gt;
-          &lt;li&gt;Consumer Pod를 Scaling 함
-            &lt;ul&gt;
-              &lt;li&gt;장점: Pod 갯수 필요한 만큼 까지만 떠 있음&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;단점: 업무 특성 상, Scale Out 시 모델 리스토어를 위하여 Pod ready 시간이 수십초~수분 소요 예상 ← 적절한 선택이 아님&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;3안) Parition과 Cousumer 갯수는 테스트로 적정치 선정
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;Parition과 Cousumer의 &lt;strong&gt;갯수 매핑&lt;/strong&gt; 자체는 실질적으로 의미가 &lt;strong&gt;없음&lt;/strong&gt;&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;전제&lt;/strong&gt;: Partition에 대한 메시지 배분이 라운드로빈이 아니라, &lt;strong&gt;대기열이 가장 짧은 partition 우선&lt;/strong&gt; 
-    ← Custom Partitioner  구현 필요?
-  ← 이미 준비되어있는 선택할 수 있는 Partitioner 유형이 있을 듯&lt;/p&gt;
-            &lt;ul&gt;
-              &lt;li&gt;
-                &lt;p&gt;Producer 생성 시, partitionerType 설정&lt;/p&gt;
-
-                &lt;ul&gt;
-                  &lt;li&gt;default = 0, random = 1, cyclic = 2, keyed = 3, custom = 4&lt;/li&gt;
-                &lt;/ul&gt;
-              &lt;/li&gt;
-              &lt;li&gt;
-                &lt;p&gt;https://github.com/SOHU-Co/kafka-node/issues/1094&lt;/p&gt;
-              &lt;/li&gt;
-              &lt;li&gt;
-                &lt;p&gt;Parition과 Cousumer 각각의 &lt;strong&gt;갯수 자체&lt;/strong&gt;가 의미 있음&lt;/p&gt;
-              &lt;/li&gt;
-              &lt;li&gt;
-                &lt;p&gt;구찮… 3)안은 못 쓰겠다.&lt;/p&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;이슈&quot;&gt;이슈&lt;/h1&gt;
-
-&lt;h2 id=&quot;partitioner-type&quot;&gt;Partitioner Type&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Producer 설정임
-    &lt;ul&gt;
-      &lt;li&gt;property: partitioner.class (default: kafka.producer.DefaultPartitioner)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cwiki.apache.org/confluence/display/KAFKA/FAQ#FAQ-Whyisdatanotevenlydistributedamongpartitionswhenapartitioningkeyisnotspecified?&quot;&gt;Why is data not evenly distributed among partitions when a partitioning key is not specified?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;partition-rebalancing&quot;&gt;Partition Rebalancing&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=3&amp;amp;ved=2ahUKEwjxzp3J8qzlAhXDzIsBHcXjA0EQFjACegQIFhAB&amp;amp;url=https%3A%2F%2Flabs.tabmo.io%2Frebalancing-kafkas-partitions-803918d8d244&amp;amp;usg=AOvVaw0WNTNpYX_TAxnYxTLxSm2c&quot;&gt;Rebalancing Kafka partitions - TabMo Labs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.confluent.io/blog/incremental-cooperative-rebalancing-in-kafka/&quot;&gt;Incremental Cooperative Rebalancing in Apache Kafka: Why Stop the World When You Can Change It?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;rebalancing-지연&quot;&gt;Rebalancing 지연&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/11st-pe-techblog/%EC%B9%B4%ED%94%84%EC%B9%B4-%EC%BB%A8%EC%8A%88%EB%A8%B8-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EB%B0%B0%ED%8F%AC-%EC%A0%84%EB%9E%B5-4cb2c7550a72&quot;&gt;카프카 컨슈머 애플리케이션 배포 전략 - 11번가 사례&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;그룹 내 특정 컨슈머가 poll 메소드를 호출을 지연&lt;/li&gt;
-  &lt;li&gt;모든 컨슈머가 poll  해야 rebalancing 진행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;nifi-연동&quot;&gt;NiFi 연동&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-kafka-0-9-nar/1.5.0/org.apache.nifi.processors.kafka.pubsub.PublishKafka/&quot;&gt;PublishKafka&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Partitioner class에 아래 2개 밖에 없음
-        &lt;ul&gt;
-          &lt;li&gt;RoundRobinPartitioner 
-Messages will be assigned partitions in a round-robin fashion, sending the first message to Partition 1, the next Partition to Partition 2, and so on, wrapping as necessary.&lt;/li&gt;
-          &lt;li&gt;DefaultPartitioner&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;consumer-option&quot;&gt;Consumer Option&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=2&amp;amp;ved=2ahUKEwis4s_no6zlAhUKvZQKHXC1ClQQFjABegQIAhAB&amp;amp;url=https%3A%2F%2Fcoding-start.tistory.com%2F137&amp;amp;usg=AOvVaw0ygVeIKyALE-u0C4ernoJG&quot;&gt;Kafka - Kafka Consumer(카프카 컨슈머) Java&amp;amp;CLI - 코딩스타트&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Option&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-      &lt;th&gt;컨수머 설정&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;bootstrap.servers&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;호스트와 포트 정보로 구성된 리스트&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;group.id&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;컨슈머 그룹 식별자&lt;/td&gt;
-      &lt;td&gt;업무별 1개&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;auto.offset.reset&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;오프셋이 없거나 현재 오프셋이 더 이상 존재하지 않은 경우 (&lt;strong&gt;earliest&lt;/strong&gt;가장초기/&lt;strong&gt;latest&lt;/strong&gt;마지막/&lt;strong&gt;none&lt;/strong&gt;에러)&lt;/td&gt;
-      &lt;td&gt;latest&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;fetch.min.bytes&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;한번에 가져올 수 있는 최소 데이터 사이즈이다. 만약 지정한 사이즈보다 작은 경우, 요청에 대해 응답하지 않고 데이터가 누적될 때까지 기다린다&lt;/td&gt;
-      &lt;td&gt;뭐지? 확인 필요. 작아야하나?&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;fetch.max.bytes&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;한번에 가져올 수 있는 최대 데이터 사이즈&lt;/td&gt;
-      &lt;td&gt;확인 필요. 별로 안 커도 될듯&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;request.timeout.ms&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;요청에 대해 응답을 기다리는 최대 시간&lt;/td&gt;
-      &lt;td&gt;뭐지? 확인 필요. 별로 안 커도 될듯&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;session.timeout.ms&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;컨슈머와 브로커사이의 세션 타임 아웃시간. 브로커가 컨슈머가 살아있는 것으로 판단하는 시간(기본값 10초)&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;롱트랜잭션이므로 충분히 길게&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;hearbeat.interval.ms&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;그룹 코디네이터에게 얼마나 자주  KafkaConsumer poll() 메소드로 하트비트를 보낼 것인지 조정한다. session.timeout.ms와 밀접한 관계가  있으며 session.timeout.ms보다 낮아야한다. 일반적으로 1/3 값정도로 설정한다.(기본값 3초)&lt;/td&gt;
-      &lt;td&gt;이거이거 확인 필요. &lt;strong&gt;우리는 롱트랜잭션&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;max.poll.records&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;단일 호출 poll()에 대한 최대 레코드 수를 조정한다. 이 옵션을 통해 애플리케이션이 폴링 루프에서 데이터를 얼마나 가져올지 양을 조정할 수 있다&lt;/td&gt;
-      &lt;td&gt;뭐지?&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;max.poll.interval.ms&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;컨슈머가 살아있는지를 체크하기 위해  하트비트를 주기적으로 보내는데, 컨슈머가 계속해서 하트비트만 보내고 실제로 메시지를 가져가지 않는 경우가 있을 수도 있다. 이러한  경우 컨슈머가 무한정 해당 파티션을 점유할 수 없도록 주기적으로 poll을 호출하지 않으면 장애라고 판단하고 컨슈머 그룹에서  제외한 후 다른 컨슈머가 해당 파티션에서 메시지를 가져갈 수 있게한다.&lt;/td&gt;
-      &lt;td&gt;이거이거 확인 필요. &lt;strong&gt;우리는 롱트랜잭션&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-# Kafka 토픽
-topic: diff-ai
-# 업무단위: 정책 상 토픽과 1:1
-group_id: mymyGrp
-# Kafka 서버
-bootstrap_servers: localhost:9092
-# 오프셋이 없거나 현재 오프셋이 더 이상 존재하지 않은 경우 
-# earliest:가장초기, latest마지막, none:에러
-auto_offset_reset: latest
-# 컨슈머와 브로커사이의 세션 타임 아웃시간 (초). 브로커가 컨슈머가 살아있는 것으로 판단하는 시간
-# ML컨수머는 롱트랜잭션이므로 충분히 길게 설정할 것
-session_timeout_ms: 1200
-# 롱트랜잭션이며 새로 추가되는 pod가 메시지를 즉시 받아올 수 있도록 1로 설정
-max_poll_records: 1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;hello-kafka&quot;&gt;Hello Kafka&lt;/h1&gt;
-
-&lt;h3 id=&quot;topic-만들기&quot;&gt;Topic 만들기&lt;/h3&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kafka-topics.bat &lt;span class=&quot;nt&quot;&gt;--create&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--zookeeper&lt;/span&gt; localhost:2181 &lt;span class=&quot;nt&quot;&gt;--replication-factor&lt;/span&gt; 1 &lt;span class=&quot;nt&quot;&gt;--partitions&lt;/span&gt; 4 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; diff-ai
-
-kafka-topics.bat &lt;span class=&quot;nt&quot;&gt;--zookeeper&lt;/span&gt; localhost:2181 &lt;span class=&quot;nt&quot;&gt;--list&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;producer-콘솔-기동&quot;&gt;Producer 콘솔 기동&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kafka-console-producer &lt;span class=&quot;nt&quot;&gt;--broker-list&lt;/span&gt; localhost:9092 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; diff-ai
-kafka-console-producer &lt;span class=&quot;nt&quot;&gt;--broker-list&lt;/span&gt; localhost:9092 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; mymy-A &amp;lt; ..&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;.&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;.&lt;span class=&quot;se&quot;&gt;\T&lt;/span&gt;est&lt;span class=&quot;se&quot;&gt;\T&lt;/span&gt;estData&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;hort_input.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;consumer-콘솔-기동&quot;&gt;Consumer 콘솔 기동&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kafka-console-consumer &lt;span class=&quot;nt&quot;&gt;--bootstrap-server&lt;/span&gt; localhost:9092 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; diff-ai &lt;span class=&quot;nt&quot;&gt;--group&lt;/span&gt; mymyGrp
-kafka-console-consumer &lt;span class=&quot;nt&quot;&gt;--bootstrap-server&lt;/span&gt; loclahost:9092 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; mymy-B &lt;span class=&quot;nt&quot;&gt;--group&lt;/span&gt; mymyGrp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;topic-alter&quot;&gt;Topic alter&lt;/h3&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kafka-topics &lt;span class=&quot;nt&quot;&gt;--alter&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--zookeeper&lt;/span&gt; localhost:2181 &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; diff-ai &lt;span class=&quot;nt&quot;&gt;--partitions&lt;/span&gt; 4
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Kafka port: 9092&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Zookeeper port: 2181&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=2&amp;amp;ved=2ahUKEwjWpPjcsLHlAhWMJaYKHUffDi8QFjABegQIBBAB&amp;amp;url=https%3A%2F%2Ftimber.io%2Fblog%2Fhello-world-in-kafka-using-python%2F&amp;amp;usg=AOvVaw3zKbjel1WRwgyoEhDahl1g&quot;&gt;Hello world in Kafka using Python - Timber.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;python-lib&quot;&gt;Python Lib&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://trends.google.co.kr/trends/explore?q=%22kafka-python%22,PyKafka,%22confluent-kafka%22&quot;&gt;구글 트랜드 결과&lt;/a&gt;
-&lt;a href=&quot;https://github.com/dpkp/kafka-python&quot;&gt;kafka-python&lt;/a&gt; &amp;gt; &lt;a href=&quot;https://github.com/Parsely/pykafka&quot;&gt;PyKafka&lt;/a&gt; &amp;gt; &lt;a href=&quot;https://github.com/confluentinc/confluent-kafka-python&quot;&gt;confluent-kafka-python&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;처리속도 비교&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=2&amp;amp;ved=2ahUKEwjckIqvvrHlAhWIQN4KHYQ0AqwQFjABegQIARAB&amp;amp;url=http%3A%2F%2Fwww.popit.kr%2Fkafka-python-client-%EC%84%B1%EB%8A%A5-%ED%85%8C%EC%8A%A4%ED%8A%B8%2F&amp;amp;usg=AOvVaw3Q4mrA8RW8xRXFcBd2tmD5&quot;&gt;Kafka Python client 성능 테스트&lt;/a&gt; (원본자료: &lt;a href=&quot;http://activisiongamescience.github.io/2016/06/15/Kafka-Client-Benchmarking/#Python-Kafka-Client-Benchmarking&quot;&gt;Python Kafka Client Benchmarking 2016-06-15&lt;/a&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;https://kafka-python.readthedocs.io/en/master/apidoc/modules.html&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/dpkp/kafka-python&quot;&gt;kafka-python&lt;/a&gt; 헬로우월드&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;Consumer&lt;/p&gt;
-
-        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;kafka&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;KafkaConsumer&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
-                    
-&lt;span class=&quot;n&quot;&gt;consumer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;KafkaConsumer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'diff-ai'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                         &lt;span class=&quot;n&quot;&gt;group_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mymyGrp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                         &lt;span class=&quot;n&quot;&gt;bootstrap_servers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'localhost:9092'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;consumer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;-&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;60&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#time.sleep(1)
-&lt;/span&gt;    
-&lt;span class=&quot;n&quot;&gt;consumer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;모니터링&quot;&gt;모니터링&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.slideshare.net/freepsw/apache-kafka-metrics-123663954&quot;&gt;Apache kafka 모니터링을 위한 Metrics 이해 및 최적화 방안&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Burrow
-    &lt;ul&gt;
-      &lt;li&gt;https://github.com/linkedin/Burrow&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=2&amp;amp;ved=2ahUKEwiyl93D8rHlAhWQbN4KHW81B_AQFjABegQIAhAB&amp;amp;url=https%3A%2F%2Fdol9.tistory.com%2F272&amp;amp;usg=AOvVaw38_uV7jfhMRQjHFyAPXSuZ&quot;&gt;Kafka Consumer Lag 모니터링, Burrow를 알아보자 (1)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;ved=2ahUKEwjZidSW-LHlAhXdzIsBHXsEDagQFjAAegQIABAB&amp;amp;url=https%3A%2F%2Fcommunity.cloudera.com%2Ft5%2FCommunity-Articles%2FMonitoring-Kafka-with-Burrow-Part-1%2Fta-p%2F245987&amp;amp;usg=AOvVaw2mXcK_5vPKZqamVCHFyw72&quot;&gt;Monitoring Kafka with Burrow - Part 1 - Cloudera Community&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=9&amp;amp;ved=2ahUKEwjenIqN87HlAhVDE4gKHb6WCBkQFjAIegQINBAB&amp;amp;url=https%3A%2F%2Fwww.slideshare.net%2Fsunnykwak90%2Fapache-zoo-keeper&amp;amp;usg=AOvVaw0PpQfiNhFgyy1PqB9LdBpq&quot;&gt;Apache ZooKeeper 소개 - SlideShare&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html"></summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">출처: How To Install Docker On Ubuntu 18.04 Bionic Beaver</summary></entry></feed>
