@@ -1,6 +1,6 @@
 ---
 title: CANONICAL Multipass
-description: 지금 알고 있는 걸 그때도 알았더라면
+description: 리눅스 서버 마련이 제일 쉬웠어요
 layout: post
 categories: [Ubuntu, multipass]
 toc: true
