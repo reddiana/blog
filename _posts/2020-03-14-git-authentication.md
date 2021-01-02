@@ -14,3 +14,13 @@ categories: [git]
   ```bash
   git config credential.helper store
   ```
+
+- 변경 추적
+  ```
+  git config log.follow true
+  ```
+- 구찮지
+  ```
+  git config --global user.email "everlearningemploye@gmail.com"
+  git config --global user.name "빨강달"
+  ```
