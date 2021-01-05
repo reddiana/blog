@@ -37,7 +37,7 @@ toc: true
       - Local filesystem `file://`
       - Persistent Volume Claim (PVC) `pvc://`
   - trained model은 프로비저닝되어 제공되는 이미지(framework)에 따름
-    - [제공되는 이미지 프로비저닝](https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec)
+    - 제공되는 이미지 프로비저닝 - [kfserving/docs/apis/v1beta1 at kubeflow/kfserving (github.com)](https://github.com/kubeflow/kfserving/tree/master/docs/apis/v1beta1#predictorspec)
       - tensorflow
       - tensorrt
       - xgboost
@@ -57,7 +57,7 @@ toc: true
 - 필수아님
 - REST API path의 postfix가 `:explain`
 - 제공되는 이미지 프로비저닝
-  - [Seldon Alibi](https://www.seldon.io/tech/products/alibi/)
+  - [Seldon Alibi](https://github.com/SeldonIO/alibi)
 
 ## 3. InferenceService 배포
 
@@ -69,7 +69,7 @@ toc: true
 
 - 방법2: Kubeflow Pipelines ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/pipelines/sample-tf-pipeline.py))
 
-- 방법3: [KFServing Python SDK](https://github.com/kubeflow/kfserving/blob/master/python/kfserving) ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb))
+- 방법3: [KFServing Python SDK](https://github.com/kubeflow/kfserving/blob/master/python/kfserving) ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_v1beta1_sample.ipynb))
 
 ## 4. InferenceService 구성요소 유형
 
@@ -81,18 +81,18 @@ toc: true
   - [Out-of-the-box](https://m.blog.naver.com/yangseungjae/220708695668) ← 프로비저닝된 이미지 사용
   - Custom
 
-### 4.1 [Out-of-the-box Predictor](https://github.com/kubeflow/kfserving/tree/master/docs/samples#deploy-kfserving-inferenceservice-with-out-of-the-box-predictor)
+### 4.1 [Out-of-the-box Predictor](https://github.com/kubeflow/kfserving/tree/master/docs/samples#deploy-inferenceservice-with-predictor)
 
 - 프로비저닝 이미지를 사용
   - 프로비저닝할 프레임워크(예: tensorflow, pytorch) 명시 필요 (이미지에 대한 기술 X) 
 - 모델이 저장된 위치 필요 (storageUri)
 
-#### 4.1.1 [tensorflow](https://github.com/kubeflow/kfserving/tree/master/docs/samples/tensorflow) 예제 
+#### 4.1.1 [tensorflow](https://github.com/kubeflow/kfserving/tree/master/docs/samples/v1beta1/tensorflow) 예제 
 
-##### 4.1.1.1 manifests: [tensorflow.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/tensorflow/tensorflow.yaml)
+##### 4.1.1.1 manifests: [tensorflow.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/v1beta1/tensorflow/simple.yaml)
 
 ```yaml
-apiVersion: "serving.kubeflow.org/v1alpha2"
+apiVersion: "serving.kubeflow.org/v1beta1"
 kind: "InferenceService"
 metadata:
   name: "flowers-sample"
@@ -103,9 +103,9 @@ spec:
         storageUri: "gs://kfserving-samples/models/tensorflow/flowers"
 ```
 
-#### 4.1.2 [pytorch](https://github.com/kubeflow/kfserving/tree/master/docs/samples/pytorch) 예제 
+#### 4.1.2 [pytorch](https://github.com/kubeflow/kfserving/tree/master/docs/samples/v1beta1/torchserve) 예제 
 
-##### 4.1.2.1 manifests: [pytorch.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/pytorch/pytorch.yaml)
+##### 4.1.2.1 manifests: [pytorch.yaml](https://github.com/kubeflow/kfserving/blob/master/docs/samples/v1alpha2/pytorch/pytorch.yaml)
 
 ```yaml
 apiVersion: "serving.kubeflow.org/v1alpha2"
@@ -150,6 +150,8 @@ spec:
 
 ```dockerfile
 # ... 선략 ...
+COPY app.py requirements.txt ./
+# ... 생략 ...
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
 ```
 
@@ -294,7 +296,7 @@ if __name__ == "__main__":
 
 ### 5.2 Client
 
-- "3. InferenceService 배포 / 방법3: KFServing Python SDK ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb))" 참조
+- "3. InferenceService 배포 / 방법3: KFServing Python SDK ([Sample](https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_v1beta1_sample.ipynb))" 참조
 
 ## 참고1: [TensorFlow Model을 Save하는 방법](https://www.tensorflow.org/tutorials/keras/save_and_load?hl=ko)
 
