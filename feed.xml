@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-01-02T10:32:58-06:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">docker 미설치 환경에서 image pull 하기</title><link href="https://everlearningemployee.github.io/blog/post/docker_drag.html" rel="alternate" type="text/html" title="docker 미설치 환경에서 image pull 하기" /><published>2020-12-30T00:00:00-06:00</published><updated>2020-12-30T00:00:00-06:00</updated><id>https://everlearningemployee.github.io/blog/post/docker_drag</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/docker_drag.html">&lt;p&gt;&lt;a href=&quot;https://github.com/NotGlop/docker-drag&quot;&gt;NotGlop/docker-drag: Download image from the Docker Hub HTTPS API (github.com)&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">NotGlop/docker-drag: Download image from the Docker Hub HTTPS API (github.com)</summary></entry><entry><title type="html">CANONICAL Multipass</title><link href="https://everlearningemployee.github.io/blog/post/canonical_multipass.html" rel="alternate" type="text/html" title="CANONICAL Multipass" /><published>2020-12-22T00:00:00-06:00</published><updated>2020-12-22T00:00:00-06:00</updated><id>https://everlearningemployee.github.io/blog/post/canonical_multipass</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/canonical_multipass.html">&lt;h2 id=&quot;canonical-multipass&quot;&gt;CANONICAL Multipass&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://everlearningemployee.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://everlearningemployee.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-01-05T15:00:48-06:00</updated><id>https://everlearningemployee.github.io/blog/feed.xml</id><title type="html">[공부하는 회사원] 빨강달</title><subtitle>영고라인</subtitle><entry><title type="html">docker 미설치 환경에서 image pull 하기</title><link href="https://everlearningemployee.github.io/blog/post/docker_drag.html" rel="alternate" type="text/html" title="docker 미설치 환경에서 image pull 하기" /><published>2020-12-30T00:00:00-06:00</published><updated>2020-12-30T00:00:00-06:00</updated><id>https://everlearningemployee.github.io/blog/post/docker_drag</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/docker_drag.html">&lt;p&gt;&lt;a href=&quot;https://github.com/NotGlop/docker-drag&quot;&gt;NotGlop/docker-drag: Download image from the Docker Hub HTTPS API (github.com)&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">NotGlop/docker-drag: Download image from the Docker Hub HTTPS API (github.com)</summary></entry><entry><title type="html">CANONICAL Multipass</title><link href="https://everlearningemployee.github.io/blog/post/canonical_multipass.html" rel="alternate" type="text/html" title="CANONICAL Multipass" /><published>2020-12-22T00:00:00-06:00</published><updated>2020-12-22T00:00:00-06:00</updated><id>https://everlearningemployee.github.io/blog/post/canonical_multipass</id><content type="html" xml:base="https://everlearningemployee.github.io/blog/post/canonical_multipass.html">&lt;h2 id=&quot;canonical-multipass&quot;&gt;CANONICAL Multipass&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://multipass.run/&quot;&gt;Multipass orchestrates virtual Ubuntu instances&lt;/a&gt;&lt;/li&gt;
@@ -8242,7 +8242,7 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
       &lt;/li&gt;
       &lt;li&gt;trained model은 프로비저닝되어 제공되는 이미지(framework)에 따름
         &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec&quot;&gt;제공되는 이미지 프로비저닝&lt;/a&gt;
+          &lt;li&gt;제공되는 이미지 프로비저닝 - &lt;a href=&quot;https://github.com/kubeflow/kfserving/tree/master/docs/apis/v1beta1#predictorspec&quot;&gt;kfserving/docs/apis/v1beta1 at kubeflow/kfserving (github.com)&lt;/a&gt;
             &lt;ul&gt;
               &lt;li&gt;tensorflow&lt;/li&gt;
               &lt;li&gt;tensorrt&lt;/li&gt;
@@ -8274,7 +8274,7 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
   &lt;li&gt;REST API path의 postfix가 &lt;code class=&quot;highlighter-rouge&quot;&gt;:explain&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;제공되는 이미지 프로비저닝
     &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://www.seldon.io/tech/products/alibi/&quot;&gt;Seldon Alibi&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://github.com/SeldonIO/alibi&quot;&gt;Seldon Alibi&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -8292,7 +8292,7 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
     &lt;p&gt;방법2: Kubeflow Pipelines (&lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/pipelines/sample-tf-pipeline.py&quot;&gt;Sample&lt;/a&gt;)&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;방법3: &lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/python/kfserving&quot;&gt;KFServing Python SDK&lt;/a&gt; (&lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb&quot;&gt;Sample&lt;/a&gt;)&lt;/p&gt;
+    &lt;p&gt;방법3: &lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/python/kfserving&quot;&gt;KFServing Python SDK&lt;/a&gt; (&lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_v1beta1_sample.ipynb&quot;&gt;Sample&lt;/a&gt;)&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -8314,7 +8314,7 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;41-out-of-the-box-predictor&quot;&gt;4.1 &lt;a href=&quot;https://github.com/kubeflow/kfserving/tree/master/docs/samples#deploy-kfserving-inferenceservice-with-out-of-the-box-predictor&quot;&gt;Out-of-the-box Predictor&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;41-out-of-the-box-predictor&quot;&gt;4.1 &lt;a href=&quot;https://github.com/kubeflow/kfserving/tree/master/docs/samples#deploy-inferenceservice-with-predictor&quot;&gt;Out-of-the-box Predictor&lt;/a&gt;&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;프로비저닝 이미지를 사용
@@ -8325,11 +8325,11 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
   &lt;li&gt;모델이 저장된 위치 필요 (storageUri)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;411-tensorflow-예제&quot;&gt;4.1.1 &lt;a href=&quot;https://github.com/kubeflow/kfserving/tree/master/docs/samples/tensorflow&quot;&gt;tensorflow&lt;/a&gt; 예제&lt;/h4&gt;
+&lt;h4 id=&quot;411-tensorflow-예제&quot;&gt;4.1.1 &lt;a href=&quot;https://github.com/kubeflow/kfserving/tree/master/docs/samples/v1beta1/tensorflow&quot;&gt;tensorflow&lt;/a&gt; 예제&lt;/h4&gt;
 
-&lt;h5 id=&quot;4111-manifests-tensorflowyaml&quot;&gt;4.1.1.1 manifests: &lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/tensorflow/tensorflow.yaml&quot;&gt;tensorflow.yaml&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;4111-manifests-tensorflowyaml&quot;&gt;4.1.1.1 manifests: &lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/v1beta1/tensorflow/simple.yaml&quot;&gt;tensorflow.yaml&lt;/a&gt;&lt;/h5&gt;
 
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;serving.kubeflow.org/v1alpha2&quot;&lt;/span&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;serving.kubeflow.org/v1beta1&quot;&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;InferenceService&quot;&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;flowers-sample&quot;&lt;/span&gt;
@@ -8340,9 +8340,9 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
         &lt;span class=&quot;na&quot;&gt;storageUri&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;gs://kfserving-samples/models/tensorflow/flowers&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;412-pytorch-예제&quot;&gt;4.1.2 &lt;a href=&quot;https://github.com/kubeflow/kfserving/tree/master/docs/samples/pytorch&quot;&gt;pytorch&lt;/a&gt; 예제&lt;/h4&gt;
+&lt;h4 id=&quot;412-pytorch-예제&quot;&gt;4.1.2 &lt;a href=&quot;https://github.com/kubeflow/kfserving/tree/master/docs/samples/v1beta1/torchserve&quot;&gt;pytorch&lt;/a&gt; 예제&lt;/h4&gt;
 
-&lt;h5 id=&quot;4121-manifests-pytorchyaml&quot;&gt;4.1.2.1 manifests: &lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/pytorch/pytorch.yaml&quot;&gt;pytorch.yaml&lt;/a&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;4121-manifests-pytorchyaml&quot;&gt;4.1.2.1 manifests: &lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/v1alpha2/pytorch/pytorch.yaml&quot;&gt;pytorch.yaml&lt;/a&gt;&lt;/h5&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;apiVersion&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;serving.kubeflow.org/v1alpha2&quot;&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;kind&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;InferenceService&quot;&lt;/span&gt;
@@ -8386,6 +8386,8 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
 &lt;h5 id=&quot;4212-dockerfile&quot;&gt;4.2.1.2 &lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/custom/hello-world/Dockerfile&quot;&gt;Dockerfile&lt;/a&gt;&lt;/h5&gt;
 
 &lt;div class=&quot;language-dockerfile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# ... 선략 ...&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; app.py requirements.txt ./&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ... 생략 ...&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -8530,7 +8532,7 @@ Requirement already satisfied: six&amp;gt;=1.5 in d:\bin\miniconda3\envs\blog\li
 &lt;h3 id=&quot;52-client&quot;&gt;5.2 Client&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;“3. InferenceService 배포 / 방법3: KFServing Python SDK (&lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb&quot;&gt;Sample&lt;/a&gt;)” 참조&lt;/li&gt;
+  &lt;li&gt;“3. InferenceService 배포 / 방법3: KFServing Python SDK (&lt;a href=&quot;https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_v1beta1_sample.ipynb&quot;&gt;Sample&lt;/a&gt;)” 참조&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;참고1-tensorflow-model을-save하는-방법&quot;&gt;참고1: &lt;a href=&quot;https://www.tensorflow.org/tutorials/keras/save_and_load?hl=ko&quot;&gt;TensorFlow Model을 Save하는 방법&lt;/a&gt;&lt;/h2&gt;

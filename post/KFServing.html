@@ -261,8 +261,7 @@ window.onload = wrap_img;
       </li>
       <li>trained model은 프로비저닝되어 제공되는 이미지(framework)에 따름
         <ul>
-          <li>
-<a href="https://github.com/kubeflow/kfserving/blob/master/docs/apis/README.md#predictorspec">제공되는 이미지 프로비저닝</a>
+          <li>제공되는 이미지 프로비저닝 - <a href="https://github.com/kubeflow/kfserving/tree/master/docs/apis/v1beta1#predictorspec">kfserving/docs/apis/v1beta1 at kubeflow/kfserving (github.com)</a>
             <ul>
               <li>tensorflow</li>
               <li>tensorrt</li>
@@ -298,7 +297,7 @@ window.onload = wrap_img;
 </li>
   <li>제공되는 이미지 프로비저닝
     <ul>
-      <li><a href="https://www.seldon.io/tech/products/alibi/">Seldon Alibi</a></li>
+      <li><a href="https://github.com/SeldonIO/alibi">Seldon Alibi</a></li>
     </ul>
   </li>
 </ul>
@@ -318,7 +317,7 @@ window.onload = wrap_img;
     <p>방법2: Kubeflow Pipelines (<a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/pipelines/sample-tf-pipeline.py">Sample</a>)</p>
   </li>
   <li>
-    <p>방법3: <a href="https://github.com/kubeflow/kfserving/blob/master/python/kfserving">KFServing Python SDK</a> (<a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb">Sample</a>)</p>
+    <p>방법3: <a href="https://github.com/kubeflow/kfserving/blob/master/python/kfserving">KFServing Python SDK</a> (<a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_v1beta1_sample.ipynb">Sample</a>)</p>
   </li>
 </ul>
 
@@ -343,7 +342,7 @@ window.onload = wrap_img;
 </ul>
 
 <h3 id="41-out-of-the-box-predictor">
-<a class="anchor" href="#41-out-of-the-box-predictor" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1 <a href="https://github.com/kubeflow/kfserving/tree/master/docs/samples#deploy-kfserving-inferenceservice-with-out-of-the-box-predictor">Out-of-the-box Predictor</a>
+<a class="anchor" href="#41-out-of-the-box-predictor" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1 <a href="https://github.com/kubeflow/kfserving/tree/master/docs/samples#deploy-inferenceservice-with-predictor">Out-of-the-box Predictor</a>
 </h3>
 
 <ul>
@@ -356,13 +355,13 @@ window.onload = wrap_img;
 </ul>
 
 <h4 id="411-tensorflow-예제">
-<a class="anchor" href="#411-tensorflow-%EC%98%88%EC%A0%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.1 <a href="https://github.com/kubeflow/kfserving/tree/master/docs/samples/tensorflow">tensorflow</a> 예제</h4>
+<a class="anchor" href="#411-tensorflow-%EC%98%88%EC%A0%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.1 <a href="https://github.com/kubeflow/kfserving/tree/master/docs/samples/v1beta1/tensorflow">tensorflow</a> 예제</h4>
 
 <h5 id="4111-manifests-tensorflowyaml">
-<a class="anchor" href="#4111-manifests-tensorflowyaml" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.1.1 manifests: <a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/tensorflow/tensorflow.yaml">tensorflow.yaml</a>
+<a class="anchor" href="#4111-manifests-tensorflowyaml" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.1.1 manifests: <a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/v1beta1/tensorflow/simple.yaml">tensorflow.yaml</a>
 </h5>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">serving.kubeflow.org/v1alpha2"</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">serving.kubeflow.org/v1beta1"</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s2">"</span><span class="s">InferenceService"</span>
 <span class="na">metadata</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">flowers-sample"</span>
@@ -374,10 +373,10 @@ window.onload = wrap_img;
 </code></pre></div></div>
 
 <h4 id="412-pytorch-예제">
-<a class="anchor" href="#412-pytorch-%EC%98%88%EC%A0%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.2 <a href="https://github.com/kubeflow/kfserving/tree/master/docs/samples/pytorch">pytorch</a> 예제</h4>
+<a class="anchor" href="#412-pytorch-%EC%98%88%EC%A0%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.2 <a href="https://github.com/kubeflow/kfserving/tree/master/docs/samples/v1beta1/torchserve">pytorch</a> 예제</h4>
 
 <h5 id="4121-manifests-pytorchyaml">
-<a class="anchor" href="#4121-manifests-pytorchyaml" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.2.1 manifests: <a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/pytorch/pytorch.yaml">pytorch.yaml</a>
+<a class="anchor" href="#4121-manifests-pytorchyaml" aria-hidden="true"><span class="octicon octicon-link"></span></a>4.1.2.1 manifests: <a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/v1alpha2/pytorch/pytorch.yaml">pytorch.yaml</a>
 </h5>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">apiVersion</span><span class="pi">:</span> <span class="s2">"</span><span class="s">serving.kubeflow.org/v1alpha2"</span>
@@ -429,6 +428,8 @@ window.onload = wrap_img;
 </h5>
 
 <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ... 선략 ...</span>
+<span class="k">COPY</span><span class="s"> app.py requirements.txt ./</span>
+<span class="c"># ... 생략 ...</span>
 <span class="k">CMD</span><span class="s"> exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app</span>
 </code></pre></div></div>
 
@@ -595,7 +596,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#52-client" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.2 Client</h3>
 
 <ul>
-  <li>“3. InferenceService 배포 / 방법3: KFServing Python SDK (<a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_sample.ipynb">Sample</a>)” 참조</li>
+  <li>“3. InferenceService 배포 / 방법3: KFServing Python SDK (<a href="https://github.com/kubeflow/kfserving/blob/master/docs/samples/client/kfserving_sdk_v1beta1_sample.ipynb">Sample</a>)” 참조</li>
 </ul>
 
 <h2 id="참고1-tensorflow-model을-save하는-방법">
