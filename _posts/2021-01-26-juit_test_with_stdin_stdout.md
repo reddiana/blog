@@ -5,6 +5,9 @@ layout: post
 categories: [junit, test, java]
 toc: false
 ---
+
+![setIn_setOut](../images/2021-01-26-juit_test_with_stdin_stdout/setIn_setOut.png)
+
 ```java
 public class MyTest {
   ByteArrayOutputStream testOut = new ByteArrayOutputStream();
