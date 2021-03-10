@@ -9,7 +9,6 @@ toc: false
 #### 관련 Link
 
 - [Docker (jenkins.io)](https://www.jenkins.io/doc/book/installing/docker/)
-
 - [docker/README.md at master · jenkinsci/docker (github.com)](https://github.com/jenkinsci/docker/blob/master/README.md)
 - [Plugin Manager CLI tool for Jenkins](https://github.com/jenkinsci/plugin-installation-manager-tool)
 
@@ -28,7 +27,7 @@ services:
     networks:
       jenkins-network:
         aliases: 
-          - dckr
+          - docker
     environment:
       - DOCKER_TLS_CERTDIR=/certs
     volumes:
@@ -44,7 +43,7 @@ services:
     networks:
       jenkins-network:
     environment:
-      - DOCKER_HOST=tcp://dckr:2376
+      - DOCKER_HOST=tcp://docker:2376
       - DOCKER_CERT_PATH=/certs/client
       - DOCKER_TLS_VERIFY=1
     volumes:
