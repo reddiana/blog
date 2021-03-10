@@ -134,9 +134,7 @@ window.onload = wrap_img;
     <h4 id="관련-link">관련 Link</h4>
 
 <ul>
-  <li>
-    <p><a href="https://www.jenkins.io/doc/book/installing/docker/">Docker (jenkins.io)</a></p>
-  </li>
+  <li><a href="https://www.jenkins.io/doc/book/installing/docker/">Docker (jenkins.io)</a></li>
   <li><a href="https://github.com/jenkinsci/docker/blob/master/README.md">docker/README.md at master · jenkinsci/docker (github.com)</a></li>
   <li><a href="https://github.com/jenkinsci/plugin-installation-manager-tool">Plugin Manager CLI tool for Jenkins</a></li>
 </ul>
@@ -155,7 +153,7 @@ window.onload = wrap_img;
     <span class="na">networks</span><span class="pi">:</span>
       <span class="na">jenkins-network</span><span class="pi">:</span>
         <span class="na">aliases</span><span class="pi">:</span> 
-          <span class="pi">-</span> <span class="s">dckr</span>
+          <span class="pi">-</span> <span class="s">docker</span>
     <span class="na">environment</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">DOCKER_TLS_CERTDIR=/certs</span>
     <span class="na">volumes</span><span class="pi">:</span>
@@ -171,7 +169,7 @@ window.onload = wrap_img;
     <span class="na">networks</span><span class="pi">:</span>
       <span class="na">jenkins-network</span><span class="pi">:</span>
     <span class="na">environment</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">DOCKER_HOST=tcp://dckr:2376</span>
+      <span class="pi">-</span> <span class="s">DOCKER_HOST=tcp://docker:2376</span>
       <span class="pi">-</span> <span class="s">DOCKER_CERT_PATH=/certs/client</span>
       <span class="pi">-</span> <span class="s">DOCKER_TLS_VERIFY=1</span>
     <span class="na">volumes</span><span class="pi">:</span>
