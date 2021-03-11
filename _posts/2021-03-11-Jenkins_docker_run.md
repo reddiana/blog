@@ -1,5 +1,5 @@
 ---
-title: Docker로 Jenkins  실행
+title: Docker로 Jenkins 설치
 description: 해줄 사람이 없을 때도 있다
 layout: post
 categories: [jenkins, docker, dind]
